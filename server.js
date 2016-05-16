@@ -68,7 +68,7 @@ passport.use(new strategy.linkedin({
     consumerKey: process.env.LINKEDIN_CONSUMER_ID,
     consumerSecret: process.env.LINKEDIN_CONSUMER_SECRET,
     callbackURL: "/auth/linkedin/callback",
-    profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline'] //specify fields
+    profileFields: ['id', 'first-name', 'last-name', 'picture-url','headline', 'industry']
   },
   function(token, tokenSecret, profile, done) {
     models.User.findOne({ "linkedinID": profile.id }, function(err, user) {
@@ -76,38 +76,48 @@ passport.use(new strategy.linkedin({
     	return done(err);
     }
 
-    console.log(profile);
+    // console.log(profile);
 
     if(!user) {
   		// (2) since the user is not found, create new user.
   		var newUser = new models.User({
   		    "linkedinID": profile.id,
-  		    "token": token
+  		    "token": token,
+          "firstName": profile._json.firstName,
+          "lastName": profile._json.lastName,
+          "headline": profile._json.headline,
+          "industry": profile._json.industry,
+          "pictureUrl": profile._json.pictureUrl
   		});
 
-   		// newUser.save(function(err, data){
-   		// 	if(err){
-   		// 		console.log(err);
-   		// 	}else{
-   		// 		console.log("User added: " + data);
-   		// 	}
-   		// });
-   		return done(null, profile);
+   		newUser.save(function(err, data){
+   			if(err){
+   				console.log(err);
+   			}else{
+   				console.log("User added: " + data);
+   			}
+   		});
+   		return done(null, newUser);
 
     } else {
         // (3) since the user is found, update user’s information
         user.twitterID = profile.id;
         user.token = token;
-
-        //  user.save(function(err, data){
-     		// 	if(err){
-     		// 		console.log(err);
-     		// 	}else{
-     		// 		console.log("User updated: " + data);
-     		// 	}
-     		// });
+        user.firstName = profile._json.firstName;
+        user.lastName = profile._json.lastName;
+        user.headline = profile._json.headline;
+        user.industry = profile._json.industry;
+        user.pictureUrl = profile._json.pictureUrl;
+        
+        user.save(function(err, data){
+     			if(err){
+     				console.log(err);
+     			}else{
+     				console.log("User updated: " + data);
+     			}
+     		});
         process.nextTick(function() {
-            return done(null, profile);
+            return done(null, user);
         });
     }
   });
@@ -139,6 +149,7 @@ app.get("/home", router.home.view);
 app.get("/getCategories", router.data.getCategories);
 app.get("/getNatData", router.data.getNatData);
 app.get("/getSanData", router.data.getSanData);
+app.get("/getUserData", router.data.getUserData);
 
 
 app.use(function(req,res){
