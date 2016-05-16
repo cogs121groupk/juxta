@@ -19,7 +19,8 @@ var db = mongoose.connection;
 
 var router = { 
 	  index: require("./routes/index"),
-    home: require("./routes/home")
+    home: require("./routes/home"),
+    data: require("./routes/data")
 };
 
 var parser = {
@@ -134,6 +135,10 @@ app.get('/logout', function(req, res){
 // Routes for pages
 app.get("/", router.index.view);
 app.get("/home", router.home.view);
+
+app.get("/getCategories", router.data.getCategories);
+app.get("/getNatData", router.data.getNatData);
+app.get("/getSanData", router.data.getSanData);
 
 
 app.use(function(req,res){
