@@ -91,4 +91,14 @@ li.logout-list a{
   color: #FFFFFF;
 }
 
+#map{
+
+  width: 100%;
+  height: 800px;
+  margin-right: 0px;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
 /***** End of topbar code *****/
