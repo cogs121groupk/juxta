@@ -1,5 +1,16 @@
 $(document).ready(function() {
-	console.log("hello");
+	// $.get('/getCategories', function(data){
+	// 	console.log(data);
+	// });
+	// $.get('/getNatData', function(data){
+	// 	console.log(data);
+	// });
+	// $.get('/getSanData', function(data){
+	// 	console.log(data);
+	// });
+	// $.get('/getUserData', function(data){
+	// 	console.log(data);
+	// });
 });
 
 
