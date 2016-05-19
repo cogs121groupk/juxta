@@ -190,3 +190,13 @@ ul.more-info {
 .choose-industry:hover #industry-drop-btn {
     background-color: #00ADB5;
 }
+
+#map{
+
+  width: 98%;
+  height: 800px;
+  margin-right: 0px;
+  text-align: center;
+  margin: 0 auto;
+
+}
