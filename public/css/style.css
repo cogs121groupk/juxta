@@ -53,7 +53,7 @@ h2 {
   text-align: center;
 }
 
-.btn-start {
+.start-btn {
   background-color: #00ADB5;
   margin-top: 50px;
   height: 10vh;
@@ -62,6 +62,7 @@ h2 {
   color: #FFFFFF;
   font-family: 'Lato', sans-serif;
   font-size: 3vh;
+  cursor: pointer;
 }
 
 #login-title a:hover {
@@ -140,19 +141,52 @@ ul.more-info {
   margin: 5% 0 5% 0;
 }
 
+/* The container <div> - needed to position the dropdown content */
 .choose-industry {
-  text-align: center;
+  position: relative;
+  display: inline-block;
 }
 
-#industry-dropdown {
+/* Style The Dropdown Button */
+#industry-drop-btn {
   height: 6vh;
   width: 20vw;
   background-color: #EEEEEE;
-  align: center;
-  vertical-align: middle;
+  background-color: #00ADB5;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  border: none;
+  cursor: pointer;
 }
 
-#industry-dropdown p {
-  vertical-align: middle;
-  color: #00ADB5;
+/* Dropdown Content (Hidden by Default) */
+#industry-drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 20vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+#industry-drop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+#industry-drop-content a:hover {
+  background-color: #EEEEEE
+}
+
+/* Show the dropdown menu on hover */
+.choose-industry:hover #industry-drop-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.choose-industry:hover #industry-drop-btn {
+    background-color: #3e8e41;
 }
