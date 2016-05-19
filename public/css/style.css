@@ -1,33 +1,128 @@
-body {
+@font-face {
+  font-family: 'Droid Serif';
+  src: url(https://fonts.googleapis.com/css?family=Droid+Serif);
+}
 
+@font-face {
+  font-family: 'Lato';
+  src: url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+}
+
+body {
+  color: #FFFFFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 3vh;
+}
+
+h1 {
+  color: #00ADB5;
+  font-size: 15vh;
+  font-family: 'Droid Serif', serif;
+}
+
+h2 {
+  font-size: 6vh;
+}
+
+.login-page {
+  /*background-color: #393E46;*/
+  top: -10vh;
+  left: 0;
+  position: absolute;
 }
 
 #login-section-first {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
-  /*background: #393E46 url("public/images/rightfit.jpg") no-repeat center center;*/
-  background-image: url("public/images/rightfit.jpg");
   color: auto;
   background-size: cover;
+  background: #393E46 url(public/images/rightfit.jpg) no-repeat center center;
+  text-align: center;
 }
 
 #login-title h1 {
+  padding-top: 8%;
+  /*letter-spacing: 40px;*/
+}
+
+#login-title h2 {
+  margin-top: -2%;
+}
+
+#login-title div {
   text-align: center;
+}
+
+.btn-start {
+  background-color: #00ADB5;
+  margin-top: 50px;
+  height: 10vh;
+  width: 20vw;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 3vh;
+}
+
+#login-title a:hover {
+  background-color: #FFFFFF;
+}
+
+#login-arrow {
+  margin-top: 75px;
+  color: #FFFFFF;
+}
+
+#login-arrow a:visited {
+  color: #FFFFFF;
+}
+
+#login-arrow a:hover {
   color: #00ADB5;
-  font-size: 12vh;
-  padding-top: 10%;
 }
 
 #login-section-second {
   height: 100vh;
   width: 100vw;
   background-color: #00ADB5;
+  text-align: center;
+}
+
+.more-info {
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+ul.more-info {
+  list-style-type: none;
+}
+
+.more-info-img {
+  height: 50vh;
+  float: left;
+}
+
+.more-info-details {
+  width: 30vw;
+  float: left;
+  margin-left: 4vw;
 }
 
 #login-section-third {
   height: 100vh;
   width: 100vw;
   background-color: #393E46;
+  text-align: center;
+}
+
+.linkedin img {
+  width: 25%;
+  margin-top: 10%;
 }
 
 .btn-login {
@@ -36,4 +131,28 @@ body {
   height: 10vh;
   width: 30vw;
   border: none;
+  color: #FFFFFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 3vh;
+}
+
+#login-or {
+  margin: 5% 0 5% 0;
+}
+
+.choose-industry {
+  text-align: center;
+}
+
+#industry-dropdown {
+  height: 6vh;
+  width: 20vw;
+  background-color: #EEEEEE;
+  align: center;
+  vertical-align: middle;
+}
+
+#industry-dropdown p {
+  vertical-align: middle;
+  color: #00ADB5;
 }
