@@ -1,75 +1,45 @@
 
 <!DOCTYPE html>
 <head>
-	<link href="../../public/css/bootstrap.min.css" rel="stylesheet"> 
-	<link href="../../public/css/2-col-portfolio.css" rel="stylesheet">
-    <link href="../../public/css/main.css" rel="stylesheet"> 
-	
 </head>
 
 <body>
-
-<div class = "nav">
-	<div class = "container">
-	<ul class = "nav nav-tabs">
-		<li class = "active"><a href = "home.html"> Industry </a></li>
-		<li><a href = "#map"> Map </a></li>
-		<li><a href = "#overall"> Overall </a></li>
-	</ul>
+<div id="aside">
+log in<br>
+your profile<br>
 </div>
+<div id="header">
+<h1>Industry</h1>
 </div>
+	<section>
+	    <!-- <a href="/chat?id=basketball">Basketball</a>
+	    <a href="/chat?id=jogging">Jogging</a>
+	    <a href="/fac?id=warren_field">Facility</a> -->
+	    <div id = "choose">
+	  		<div class = "choose">
+		 		<h1></h1>
+			 	<center><div class = "icon">
+			 		 <img class="img-responsive" src="../public/images/screenshot.png">
+			 		 <img class="img-responsive" src="../public/images/graph.png">
+		        </div>
+		    </center>
+	        </div>
+	    </div>
+	</section>
 
-<!-- Page Content -->
-<div id="industry">
-	<div class = "active">
-	</div>
-	<div class = "row">
-		<div class = "col-lg-12">
-			<h1 class = "page-header"> Industry </h1>
-		</div>
-		<div class="row">
-			<div class="col-md-6 portfolio-item">
-		        <a href="#">
-		            <img class="img-responsive" src="../../public/image/screenshot.png" alt="" width = "50%" margin-left = "30px">
-		        </a>
-            </div>
-            <div class="col-md-6 portfolio-item">
-            	<iframe width="560" height="315" src="https://www.youtube.com/embed/uWSxzjyMNpU" frameborder="0" allowfullscreen></iframe>
-            </div>
-          
-        </div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/socket.io.min.js"></script>
 
-</div>
+<!-- <div id="footer">
 
-
-<!-- Page Content -->
-<div id="map">
-	<div class = "active">
-	</div>
-	<div class = "col-lg-12">
-			<h1 class = "page-header"> Map </h1>
-	</div>
-	<div>
-		<img class = "img-responsive" src = "../../public/image/screenshot_map.png" width = "90%">
-	</div>
-</div>
-
-<!-- Page Content -->
-<div id="overall">
-	<div class = "active">
-	</div>
-	<div class = "col-lg-12">
-			<h1 class = "page-header"> Overall </h1>
-	</div>
-	<div class="col-md-6 portfolio-item">
-		<img class = "img-responsive" src = "../../public/image/overall_1.png" width = "60%" align = "middle">
-	</div>
-	<div class="col-md-6 portfolio-item">
-		<img class = "img-responsive" src = "../../public/image/overall_2.png" width = "60%">
-	</div>
-</div>
+</div> -->
 
 </body>
+
+
+</body>
+
+
 
 <style>
 body{
@@ -78,4 +48,51 @@ body{
 img{
 	align: middle;
 }
-  </style>
+
+#header {
+    
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#aside {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:1000px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+
+.choose {
+  margin-top: -2%;
+  position: fixed;
+  z-index: -1;
+}
+
+.icon {
+  margin-top: 0px;
+  display: inline-block;
+  font-size: 0px;
+}
+
+.icon img {
+  /*display: inline-block;*/
+  margin: 0px;
+  width: 30%;
+  
+  z-index: 2;
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+</style>
