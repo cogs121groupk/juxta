@@ -1,3 +1,10 @@
+/*Color Scheme:
+#3399CC Blue (main color)
+#CC623C Orange
+#131313 Super Dark Gray (background)
+#FFFFFF White (text)
+#393E46 Gray (sidebar)*/
+
 @font-face {
   font-family: 'Droid Serif';
   src: url(https://fonts.googleapis.com/css?family=Droid+Serif);
@@ -17,7 +24,7 @@ body {
 }
 
 h1 {
-  color: #00ADB5;
+  color: #3399CC;
   font-size: 15vh;
   font-family: 'Droid Serif', serif;
 }
@@ -27,7 +34,6 @@ h2 {
 }
 
 .login-page {
-  /*background-color: #393E46;*/
   top: -10vh;
   left: 0;
   position: absolute;
@@ -38,13 +44,12 @@ h2 {
   width: 100vw;
   color: auto;
   background-size: cover;
-  background: #393E46 url(public/images/rightfit.jpg) no-repeat center center;
+  background: #131313 url(public/images/rightfit.jpg) no-repeat center center;
   text-align: center;
 }
 
 #login-title h1 {
   padding-top: 8%;
-  /*letter-spacing: 40px;*/
 }
 
 #login-title h2 {
@@ -56,19 +61,22 @@ h2 {
 }
 
 .start-btn {
-  background-color: #00ADB5;
+  background-color: transparent;
   margin-top: 50px;
   height: 10vh;
   width: 20vw;
-  border: none;
-  color: #FFFFFF;
+  border: 2px;
+  border-style: solid;
+  border-color: #CC623C;
+  color: #CC623C;
   font-family: 'Lato', sans-serif;
   font-size: 3vh;
   cursor: pointer;
 }
 
-#login-title a:hover {
-  background-color: #FFFFFF;
+.start-btn:hover {
+  background-color: #CC623C;
+  color: #FFFFFF;
 }
 
 #login-arrow {
@@ -87,7 +95,7 @@ h2 {
 #login-section-second {
   height: 100vh;
   width: 100vw;
-  background-color: #00ADB5;
+  background-color: #3399CC;
   text-align: center;
 }
 
@@ -119,7 +127,7 @@ ul.more-info {
 #login-section-third {
   height: 100vh;
   width: 100vw;
-  background-color: #393E46;
+  background-color: #131313;
   text-align: center;
 }
 
@@ -151,12 +159,14 @@ ul.more-info {
 
 /* Style dropdown bubtton */
 #industry-drop-btn {
-  height: 6vh;
-  width: 20vw;
-  background-color: #222831;
-  color: #FFFFFF;
+  height: 8vh;
+  width: 25vw;
+  background-color: transparent;
+  color: #CC623C;
   font-size: 2.5vh;
-  border: none;
+  border: 2px;
+  border-style: solid;
+  border-color: #CC623C;
   cursor: pointer;
 }
 
@@ -165,7 +175,7 @@ ul.more-info {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 20vw;
+    min-width: 25vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     font-size: 2.5vh;
 }
@@ -180,12 +190,8 @@ ul.more-info {
 
 /* Change color of dropdown links on hover */
 #industry-drop-content a:hover {
-  background-color: #EEEEEEops, no results found!
-
-To Compare:
-
-￼Compare!
-
+  background-color: #EEEEEE;
+  color: #CC623C;
 }
 
 /* Show dropdown menu on hover */
@@ -195,18 +201,23 @@ To Compare:
 
 /* Change the background color of the dropdown button when dropdown content is shown */
 .choose-industry:hover #industry-drop-btn {
-    background-color: #00ADB5;
+    background-color: #CC623C;
+    color: #FFFFFF;
 }
 
 #page-title {
-  color: white;
+  color: #3399CC; /*white*/
   text-align: center;
   font-size: 7vh;
+  font-weight: bold;
   margin-top: -2%;
 }
 
 .container {
   overflow: hidden;
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .sidebar {
@@ -214,8 +225,6 @@ To Compare:
   width: 20vw;
   background-color: #393E46;
   float: left;
-  top: 0;
-  left: 0;
   text-align: center;
 }
 
@@ -226,8 +235,15 @@ To Compare:
   overflow: hidden;
 }
 
-.sidebar p {
-  padding-bottom: 10px;
+.sidebar-top {
+  background-color: #3399CC;
+  height: 8vh;
+  font-size: 5vh;
+  letter-spacing: 6px;
+}
+
+.app-name {
+  padding-top: 7px;
 }
 
 .sidebar a{
@@ -238,12 +254,17 @@ To Compare:
 .profile img {
   height: 80px;
   width: 80px;
-  padding-top: 20px;
+  padding-top: 30px;
   margin-bottom: -10px;
 }
 
 .tabs {
   text-align: center;
+  padding: 2vh 0 0 2vw;
+}
+
+.tabs p {
+  padding-bottom: 10px;
 }
 
 .options {
@@ -255,18 +276,20 @@ To Compare:
 .sidebar-changeInd {
   position: relative;
   display: inline-block;
-  margin-top: -10px;
-  padding-bottom: 20px;
+  /*margin-top: -10px;*/
+  padding-bottom: 40px;
 }
 
 /* Style dropdown bubtton */
 #sidebar-indDropBtn {
   height: 6vh;
   width: 16vw;
-  background-color: #222831;
-  color: #FFFFFF;
+  background-color: transparent;
+  color: #CC623C;
   font-size: 2.5vh;
-  border: none;
+  border: 2px;
+  border-style: solid;
+  border-color: #CC623C;
   cursor: pointer;
 }
 
@@ -274,7 +297,7 @@ To Compare:
 #sidebar-indDropContent {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #F9F9F9;
     min-width: 16vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     font-size: 2.5vh;
@@ -290,7 +313,7 @@ To Compare:
 
 /* Change color of dropdown links on hover */
 #sidebar-indDropContent a:hover {
-  background-color: #EEEEEE
+  color: #CC623C;
 }
 
 /* Show dropdown menu on hover */
@@ -300,7 +323,9 @@ To Compare:
 
 /* Change the background color of the dropdown button when dropdown content is shown */
 .sidebar-changeInd:hover #sidebar-indDropBtn {
-    background-color: #00ADB5;
+    background-color: #CC623C;
+    border-color: #CC623C;
+    color: #FFFFFF;
 }
 
 .content {
