@@ -11,6 +11,11 @@ const MongoStore = require("connect-mongo")(session);
 
 var models = require('./models');
 
+//graph
+//var Chart = require('src/chart.js');
+//var myChart = new Chart({...})
+
+
 require('dotenv').config();
 
 require("dotenv").load();
