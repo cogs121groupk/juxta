@@ -3,21 +3,12 @@
 #CC623C Orange
 #131313 Super Dark Gray (background)
 #FFFFFF White (text)
-#393E46 Gray (sidebar)*/
-
-@font-face {
-  font-family: 'Droid Serif';
-  src: url(https://fonts.googleapis.com/css?family=Droid+Serif);
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
-}
+#333333 Gray (sidebar)*/
 
 body {
   color: #FFFFFF;
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Ubuntu', sans-serif;*/
+  font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
   background-color: #131313;
   margin: 0px;
@@ -26,11 +17,12 @@ body {
 h1 {
   color: #3399CC;
   font-size: 15vh;
-  font-family: 'Droid Serif', serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 h2 {
   font-size: 5vh;
+  font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .login-page {
@@ -69,7 +61,7 @@ h2 {
   border-style: solid;
   border-color: #CC623C;
   color: #CC623C;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
   cursor: pointer;
 }
@@ -81,6 +73,10 @@ h2 {
 
 #login-arrow {
   margin-top: 80px;
+  color: #FFFFFF;
+}
+
+#login-arrow a {
   color: #FFFFFF;
 }
 
@@ -143,7 +139,7 @@ ul.more-info {
   width: 30vw;
   border: none;
   color: #FFFFFF;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
 }
 
@@ -164,6 +160,7 @@ ul.more-info {
   background-color: transparent;
   color: #CC623C;
   font-size: 2.5vh;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
   border: 2px;
   border-style: solid;
   border-color: #CC623C;
@@ -210,6 +207,7 @@ ul.more-info {
   font-size: 7vh;
   font-weight: bold;
   margin-top: -2%;
+  font-family: 'Oswald', sans-serif;
 }
 
 .container {
@@ -222,7 +220,7 @@ ul.more-info {
 .sidebar {
   height: 100vh;
   width: 20vw;
-  background-color: #393E46;
+  background-color: #333333;
   float: left;
   text-align: center;
 }
@@ -238,16 +236,20 @@ ul.more-info {
   background-color: #3399CC;
   height: 8vh;
   font-size: 5vh;
-  letter-spacing: 6px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .app-name {
-  padding-top: 7px;
+  padding-top: 3px;
 }
 
-.sidebar a{
+.sidebar a {
   color: white;
   text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #CC623C;
 }
 
 .profile img {
@@ -287,6 +289,7 @@ ul.more-info {
   background-color: transparent;
   color: #CC623C;
   font-size: 2.5vh;
+  font-family: 'Quattrocento Sans', sans-serif;
   border: 2px;
   border-style: solid;
   border-color: #CC623C;
@@ -363,7 +366,7 @@ ul.more-info {
 
 .compRow h2{
   font-size: 11vh;
-  font-family: 'Droid Serif', serif;
+  font-family: 'Quattrocento Sans', sans-serif;
 }
 
 #matches{
@@ -419,6 +422,7 @@ cursor: pointer;}
   margin-left: 5%;
   margin-top: 3%;
   font-size: 45px;
+  font-family: 'Quattrocento Sans', sans-serif;
   padding-left: 10px;
 }
 
@@ -426,6 +430,7 @@ cursor: pointer;}
   width: 75%;
   height: 40px;
   font-size: 25px;
+  font-family: 'Quattrocento Sans', sans-serif;
   background-color: transparent;
   border: 2px;
   border-style: solid;
@@ -450,17 +455,16 @@ cursor: pointer;}
 #space{
   /*height: 1700px;*/
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
-#space h1{
+#space h1 {
   padding-top: 500px;
   text-align: center;
   vertical-align: middle;
 }
 
-#space h2{
+#space h2 {
   text-align: center;
   vertical-align: middle;
-  /*font-family: 'Droid Serif', serif;*/
 }
