@@ -13,6 +13,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 3vh;
   background-color: #00ADB5;
+  margin: 0px;
 }
 
 h1 {
@@ -229,6 +230,11 @@ To Compare:
   padding-bottom: 10px;
 }
 
+.sidebar a{
+  color: white;
+  text-decoration: none;
+}
+
 .profile img {
   height: 80px;
   width: 80px;
@@ -237,13 +243,12 @@ To Compare:
 }
 
 .tabs {
-  padding: 1vh 0 0 2vw;
-  text-align: left;
+  text-align: center;
 }
 
 .options {
-  padding: 10vh 0 0 2vw;
-  text-align: left;
+  padding-top: 10%;
+  text-align: center;
 }
 
 /* The container <div> - needed to position dropdown content */
@@ -344,7 +349,6 @@ To Compare:
   float: left;
   color: black;
   background-color: white;
-  border: 3px solid black;
   overlay: hidden;
 }
 
@@ -375,7 +379,6 @@ cursor: pointer;}
   margin-left: 5%;
   margin-top: 3%;
   font-size: 45px;
-  border: 3px solid black;
   padding-left: 10px;
 }
 
@@ -405,6 +408,7 @@ cursor: pointer;}
 }
 
 #space h1{
+  color: white;
   padding-top: 1000px;
   text-align: center;
   vertical-align: middle;
@@ -413,7 +417,7 @@ cursor: pointer;}
 #space h2{
   text-align: center;
   vertical-align: middle;
-  color: #00ADB5;
+  color: white;
   font-size: 11vh;
   font-family: 'Droid Serif', serif;
 
