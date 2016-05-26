@@ -1,76 +1,16 @@
+<div class = "container">
+    {{> sidebar}}
 
-<!DOCTYPE html>
-<head>
-	
-</head>
+    <div class = "not-sidebar">
 
-<body>
+      <div id="page-title">
+        	<p>Your Industry</p>
+      </div>
 
-<div id="header">
-	<h1>Industry</h1>
-</div>
+      <div class = "content">
+          <img src = "/images/screenshot.png" style = "width: 30%">
+          <img src = "/images/graph.png" style = "width: 30%">
+      </div>
 
-<div id="nav">
-	profile<br>
-	search history<br>
-</div>
-
-<section>
-    <div id = "choose">
-  		<div class = "choose">
-		 	<center><div class = "icon">
-		 		 <img src="../public/images/screenshot.png"/>
-		 		 <img src="../public/images/graph.png"/></a>
-	        </div>
-	    </center>
-        </div>
     </div>
-	</section>
-
-
-</body>
-
-<style>
-body{
-  background-color: rgb(0, 173, 181);
-}
-#header {
-    background-color:black;
-    color:white;
-    text-align:center;
- 
-   padding:5px;
-}
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:900px;
-    width:100px;
-    float:left;
-    padding:5px; 
-}
-
-img{
-	align: middle;
-}
-.choose {
-  margin-top: -2%;
-  position: fixed;
-  z-index: -1;
-}
-
-.icon {
-  margin-top: 30px;
-  display: inline-block;
-  font-size: 0px;
-}
-
-.icon img {
-  /*display: inline-block;*/
-  margin: 0px;
-  width: 30%;
-
-  z-index: 2;
-}
-
-  </style>
+</div>
