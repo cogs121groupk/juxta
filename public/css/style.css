@@ -19,7 +19,7 @@ body {
   color: #FFFFFF;
   font-family: 'Lato', sans-serif;
   font-size: 3vh;
-  background-color: #00ADB5;
+  background-color: #131313;
   margin: 0px;
 }
 
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: 6vh;
+  font-size: 5vh;
 }
 
 .login-page {
@@ -80,7 +80,7 @@ h2 {
 }
 
 #login-arrow {
-  margin-top: 75px;
+  margin-top: 80px;
   color: #FFFFFF;
 }
 
@@ -89,7 +89,7 @@ h2 {
 }
 
 #login-arrow a:hover {
-  color: #00ADB5;
+  color: #CC623C;
 }
 
 #login-section-second {
@@ -190,7 +190,6 @@ ul.more-info {
 
 /* Change color of dropdown links on hover */
 #industry-drop-content a:hover {
-  background-color: #EEEEEE;
   color: #CC623C;
 }
 
@@ -259,17 +258,18 @@ ul.more-info {
 }
 
 .tabs {
-  text-align: center;
   padding: 2vh 0 0 2vw;
 }
 
 .tabs p {
   padding-bottom: 10px;
+  text-align: left;
 }
 
 .options {
-  padding-top: 10%;
-  text-align: center;
+  /*margin-top: 40%;*/
+  padding: 18vh 0 0 2vw;
+  text-align: left;
 }
 
 /* The container <div> - needed to position dropdown content */
@@ -332,21 +332,36 @@ ul.more-info {
   text-align: center;
 }
 
-#map{
+/*#map{
 
   width: 98%;
   height: 800px;
   margin-right: 0px;
   text-align: center;
   margin: 0 auto;
+}*/
+
+#back {
+  color: #CC623C;
+  text-decoration: none;
+  padding: 10px 0 0 10px;
 }
+
+#back a:visited {
+  color: #CC623C;
+  text-decoration: none;
+}
+
+#back a:hover {
+  text-decoration: underline;
+}
+
 .compRow{
   width: 100%;
   margin-left: 4%;
 }
 
 .compRow h2{
-  color: #00ADB5;
   font-size: 11vh;
   font-family: 'Droid Serif', serif;
 }
@@ -362,7 +377,7 @@ ul.more-info {
   width: 17%;
   float: left;
   margin-top: 1.5%;
-  color: black;
+  color: white;
   text-align: center;
 }
 .compTile{
@@ -393,7 +408,7 @@ position: absolute;
 cursor: pointer;}
 
 #plus       {  font-family:Helvetica;
-               line-height: 175%;
+               line-height: 100%; /*175%*/
                font-weight:900;
                color:rgba(255,255,255,.85);
                font-size:96px;}
@@ -411,16 +426,21 @@ cursor: pointer;}
   width: 75%;
   height: 40px;
   font-size: 25px;
-  background-color: green;
-  color: white;
+  background-color: transparent;
+  border: 2px;
+  border-style: solid;
+  border-color: #CC623C;
+  color: #CC623C;
 }
 
 #compareButton:hover{
   cursor: pointer;
+  color: #FFFFFF;
+  background-color: #CC623C;
 }
 
 .delete{
-  color: red;
+  color: #CC623C;
 }
 
 .delete:hover{
@@ -428,13 +448,13 @@ cursor: pointer;}
 }
 
 #space{
-  height: 1700px;
-
+  /*height: 1700px;*/
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 #space h1{
-  color: white;
-  padding-top: 1000px;
+  padding-top: 500px;
   text-align: center;
   vertical-align: middle;
 }
@@ -442,8 +462,5 @@ cursor: pointer;}
 #space h2{
   text-align: center;
   vertical-align: middle;
-  color: white;
-  font-size: 11vh;
-  font-family: 'Droid Serif', serif;
-
+  /*font-family: 'Droid Serif', serif;*/
 }
