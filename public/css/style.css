@@ -178,7 +178,12 @@ ul.more-info {
 
 /* Change color of dropdown links on hover */
 #industry-drop-content a:hover {
-  background-color: #EEEEEE
+  background-color: #EEEEEEops, no results found!
+
+To Compare:
+
+￼Compare!
+
 }
 
 /* Show dropdown menu on hover */
@@ -198,5 +203,112 @@ ul.more-info {
   margin-right: 0px;
   text-align: center;
   margin: 0 auto;
+}
+.compRow{
+  width: 100%;
+  margin-left: 4%;
+}
+
+.compRow h2{
+  color: #00ADB5;
+  font-size: 11vh;
+  font-family: 'Droid Serif', serif;
+}
+
+#matches{
+  display: inline-block;
+  float: left;
+  width: 80%;
+}
+
+#compare{
+  display: inline-block;
+  width: 17%;
+  float: left;
+  margin-top: 1.5%;
+  color: black;
+  text-align: center;
+}
+.compTile{
+  width: 20%;
+  margin-right: 4%;
+  margin-top: 4%;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+  overlay: hidden;
+}
+
+#overlay    {  background:rgba(0,0,0,.75);
+               text-align:center;
+               vertical-align: center;
+               display: none;
+               width: 16%;
+               height: 18%;
+               opacity:0;
+               -webkit-transition: opacity .25s ease;
+-moz-transition: opacity .25s ease;}
+
+.compTile:hover #overlay {opacity:1;
+display: block;
+position: absolute;
+cursor: pointer;}
+
+#plus       {  font-family:Helvetica;
+               line-height: 175%;
+               font-weight:900;
+               color:rgba(255,255,255,.85);
+               font-size:96px;}
+
+#search{
+  height: 50px;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 3%;
+  font-size: 45px;
+  border: 3px solid black;
+  padding-left: 10px;
+}
+
+#compareButton{
+  width: 75%;
+  height: 40px;
+  font-size: 25px;
+  background-color: green;
+  color: white;
+}
+
+#compareButton:hover{
+  cursor: pointer;
+}
+
+.delete{
+  color: red;
+}
+
+.delete:hover{
+  cursor:pointer;
+}
+
+#space{
+  height: 1700px;
+
+}
+
+#space h1{
+  padding-top: 1000px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#space h2{
+  text-align: center;
+  vertical-align: middle;
+  color: #00ADB5;
+  font-size: 11vh;
+  font-family: 'Droid Serif', serif;
 
 }
