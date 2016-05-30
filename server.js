@@ -157,7 +157,10 @@ app.get("/getCategories", router.data.getCategories);
 app.get("/getNatData", router.data.getNatData);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
+app.get("/getIndustry", router.data.getIndustry);
 
+//Post routes
+app.post("/postIndustry", router.data.postIndustry);
 
 app.use(function(req,res){
     res.render('404');
