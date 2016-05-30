@@ -11,8 +11,22 @@ $(document).ready(function() {
 	// $.get('/getUserData', function(data){
 	// 	console.log(data);
 	// });
+	$(".choose-industry a").click(chooseIndustry);
+	$(".sidebar-changeInd a").click(chooseIndustry);
+	getIndustry();
 });
 
+function getIndustry(){
+	$.get('/getIndustry', function(data){
+		console.log(data);
+	});
+}
+
+function chooseIndustry(e){
+	var i = $(this).data("value");
+	var json = { 'industry': i };
+	$.post("/postIndustry", json);
+}
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
