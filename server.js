@@ -21,7 +21,8 @@ var router = {
 	  index: require("./routes/index"),
     home: require("./routes/home"),
     map: require("./routes/maps"),
-    data: require("./routes/data")
+    data: require("./routes/data"),
+    list: require("./routes/list")
 };
 
 var parser = {
@@ -147,6 +148,7 @@ app.get('/logout', function(req, res){
 app.get("/", router.index.view);
 app.get("/home", router.home.view);
 app.get("/map", router.map.view);
+app.get("/list", router.list.view);
 
 //Routes for JSON data
 app.get("/getBusinessLocationData", router.index.getBusinessLocationData)
@@ -155,7 +157,10 @@ app.get("/getCategories", router.data.getCategories);
 app.get("/getNatData", router.data.getNatData);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
+app.get("/getIndustry", router.data.getIndustry);
 
+//Post routes
+app.post("/postIndustry", router.data.postIndustry);
 
 app.use(function(req,res){
     res.render('404');
