@@ -12,7 +12,7 @@ const MongoStore = require("connect-mongo")(session);
 var models = require('./models');
 
 //graph
-//var Chart = require('src/chart.js');
+//var Chart = require('./node_modules/chart.js/dist/Chart.min.js');
 //var myChart = new Chart({...})
 
 
@@ -27,7 +27,8 @@ var router = {
     home: require("./routes/home"),
     map: require("./routes/maps"),
     data: require("./routes/data"),
-    list: require("./routes/list")
+    list: require("./routes/list"),
+    graph:require("./routes/graph")//delete later
 };
 
 var parser = {

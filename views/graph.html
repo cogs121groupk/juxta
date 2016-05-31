@@ -2,10 +2,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Industry trend</title>
-	<script src="Chart.js"></script>
-	<script type="text/javascript" src="../unformated_data_nat.json"></script>
+	<script type="text/javascript" src="../node_modules/chart.js/dist/Chart.min.js"></script>
     <script type="text/javascript" src="../public/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../public/js/graph.js"></script>
+    <script type="text/javascript" src="../public/js/home.js"></script>
+   
 
 	
 </head>
@@ -13,6 +13,10 @@
 <canvas id="myChart" width="400" height="400"></canvas>
 
 <script>
+      $(document).ready(function() {
+     $.getJSON("../unformated_data_nat.json", function(json) {
+     console.log(json); // this will show the info it in firebug console
+ });
 
 var ctx = document.getElementById("myChart");
 var data = {
@@ -41,7 +45,7 @@ var data = {
         }
     ]
 };
-//new Chart(ctx).Line(data);
+
 
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -52,6 +56,7 @@ var myChart = new Chart(ctx, {
         }]
     }
 });
+};
 </script>
 
 </body>
