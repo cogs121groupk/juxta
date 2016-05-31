@@ -4,6 +4,7 @@ $(document).ready(function() {
 	// });
 	$.get('/getNatData', function(data){
 		console.log(data);
+		console.log("true");
 	});
 	// $.get('/getSanData', function(data){
 	// 	console.log(data);
