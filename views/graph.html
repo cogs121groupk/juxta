@@ -13,13 +13,13 @@
 <canvas id="myChart" width="400" height="400"></canvas>
 
 <script>
-      $(document).ready(function() {
-     $.getJSON("../unformated_data_nat.json", function(json) {
-     console.log(json); // this will show the info it in firebug console
- });
+// $(document).ready(function() {
+//      $.getJSON("../unformated_data_nat.json", function(json) {
+//      console.log(json); // this will show the info it in firebug console
+//      });
 
-var ctx = document.getElementById("myChart");
-var data = {
+    var ctx = document.getElementById("myChart");
+    var data = {
     labels: ["2011", "2012", "2013", "2014", "2015"],
     datasets: [
         {
@@ -44,10 +44,10 @@ var data = {
             data: [65, 59, 80, 81, 56, 55, 40],
         }
     ]
-};
+    };
 
 
-var myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
     type: 'line',
     data: data,
     options: {
@@ -55,8 +55,8 @@ var myChart = new Chart(ctx, {
             display: false
         }]
     }
-});
-};
+    });
+    //};
 </script>
 
 </body>

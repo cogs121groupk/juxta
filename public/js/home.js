@@ -66,7 +66,7 @@ var drawChart = function(){
         }
     ]
 };
-//new Chart(ctx).Line(data);
+new Chart(ctx).Line(data);
 var myChart = new Chart(ctx, {
     type: 'line',
     data: data,
