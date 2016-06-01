@@ -2,7 +2,8 @@ $( document ).ready(function() {
 	// $.get('/getCategories', function(data){
 	// 	console.log(data);
 	// });
-	$.get('/getNatData', function(data){
+
+	$.get('/getSanData', function(data){
 		var industry = "Architecture and Engineering Occupations";
 		//[5]->2011->[35]->obj of jobs
 		var result = {};
@@ -51,6 +52,7 @@ $( document ).ready(function() {
   //         }
 		// } 
 	});
+
 
 	// $.get('/getSanData', function(data){
 	// 	console.log(data);
