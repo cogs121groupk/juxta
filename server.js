@@ -154,7 +154,6 @@ app.get("/list", router.list.view);
 app.get("/getBusinessLocationData", router.index.getBusinessLocationData)
 
 app.get("/getCategories", router.data.getCategories);
-app.get("/getNatData", router.data.getNatData);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
 app.get("/getIndustry", router.data.getIndustry);
