@@ -5,9 +5,6 @@ $(document).ready(function() {
 	// $.get('/getNatData', function(data){
 	// 	console.log(data);
 	// });
-	// $.get('/getSanData', function(data){
-	// 	console.log(data);
-	// });
 	// $.get('/getUserData', function(data){
 	// 	console.log(data);
 	// });
