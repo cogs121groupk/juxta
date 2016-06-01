@@ -1,5 +1,6 @@
 var category = require('../category.json');
 var san = require('../unformated_data_san.json');
+var sanDiegoCompanies = require('../sd_companies.json');
 
 exports.getUserData = function(req, res){
 	var data = req.user || {};
@@ -28,4 +29,8 @@ exports.postIndustry = function(req, res) {
 	req.session.industry = data.industry;
 	// console.log(req.session.industry);
 	res.send("got industry");
+}
+
+exports.getSanDiegoCompanies = function(req, res){
+	res.json(sanDiegoCompanies);
 }

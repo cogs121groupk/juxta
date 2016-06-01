@@ -157,6 +157,7 @@ app.get("/getCategories", router.data.getCategories);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
 app.get("/getIndustry", router.data.getIndustry);
+app.get("/getSanDiegoCompanies", router.data.getSanDiegoCompanies);
 
 //Post routes
 app.post("/postIndustry", router.data.postIndustry);
