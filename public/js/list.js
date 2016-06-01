@@ -1,7 +1,10 @@
-var items =[{name: "Albatross", inner: "Good Company"}, {name: "AirBnB", inner: "Good Company"} ,{name: "Banister", inner: "Good Company"},
-			{name: "Cisco", inner: "Good Company"},{name: "Classy", inner: "Good Company"},{name: "Costco", inner: "Heaven"},
-			{name: "Dinero", inner: "Good Company"},{name: "E-Surance", inner: "Good Company"}, {name: "Facebook", inner: "Good Company"},
-			{name: "GlassDoor", inner: "Transparent"},{name: "Google", inner: "Good Company"},{name: "Haswell", inner: "Good Company"}];
+// var items =[{name: "Albatross", inner: "Good Company"}, {name: "AirBnB", inner: "Good Company"} ,{name: "Banister", inner: "Good Company"},
+// 			{name: "Cisco", inner: "Good Company"},{name: "Classy", inner: "Good Company"},{name: "Costco", inner: "Heaven"},
+// 			{name: "Dinero", inner: "Good Company"},{name: "E-Surance", inner: "Good Company"}, {name: "Facebook", inner: "Good Company"},
+// 			{name: "GlassDoor", inner: "Transparent"},{name: "Google", inner: "Good Company"},{name: "Haswell", inner: "Good Company"}];
+
+
+var items = [];
 
 var one = 0;
 
@@ -9,24 +12,35 @@ var two = 0;
 
 var compare = [];
 
-for(var h = 0; h < items.length; h++){
+$(document).ready(function(){
+	$.get("/getSanDiegoCompanies", function(data){
+		// for(var i = 0; i < data.employers.length; i++){
+		// 	console.log(data.employers[i]);
+		// }
 
-	if(h < 4){
-		one = 1;
-	}
-	else if(h < 8){
-		one = 2;
-	}
-	else if(h < 12){
-		one = 3;
-	}
+		items = data.employers;
 
-	var tile = "<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + items[h].name + "\")'><span id='plus'>+</span></div><h3>"+items[h].name+"</h3><p>"+items[h].inner+"</p></div></div>";
+		for(var h = 0; h < items.length; h++){
 
-	$("#row"+one).append(tile);
+			if(h < 4){
+				one = 1;
+			}
+			else if(h < 8){
+				one = 2;
+			}
+			else if(h < 12){
+				one = 3;
+			}
 
-	one = 0;
-}
+			var tile = "<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + items[h].name + "\")'><span id='plus'>+</span></div><image src = "+items[h].squareLogo+"><h3>"+items[h].name+"</h3><p></p></div></div>";//+items[h].inner+"</p></div></div>";
+
+			$("#row"+one).append(tile);
+
+			one = 0;
+		}
+
+	});
+});
 
 
 $('#search').bind('input',function(){
@@ -64,7 +78,7 @@ $('#search').bind('input',function(){
 				two = 3;
 			}
 
-			$("#row"+two).append("<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + matches[i].name + "\")'><span id='plus'>+</span></div><h3>"+matches[i].name+"</h3><p>"+matches[i].inner+"</p></div></div>");
+			$("#row"+two).append("<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + matches[i].name + "\")'><span id='plus'>+</span></div><h3>"+matches[i].name+"</h3><p></p></div></div>");//+matches[i].inner+"</p></div></div>");
 			two = 0;
 		}
 	}
