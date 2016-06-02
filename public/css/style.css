@@ -228,6 +228,7 @@ ul.more-info {
 }
 
 .not-sidebar {
+  margin-left: 20vw;
   height: 100vh;
   width: 78vw;
   float: left;
@@ -388,7 +389,7 @@ ul.more-info {
 }
 .compTile{
   width: 17.5%;
-  height: 240px;
+  height: 26.4vh;
   margin-right: 2.5%;
   margin-top: 2.5%;
   text-align: center;
@@ -403,29 +404,29 @@ ul.more-info {
                text-align:center;
                vertical-align: center;
                display: none;
-               width: 16%;
-               height: 18%;
+               width: 10.85%;
+               height: 26.5%;
                opacity:0;
                -webkit-transition: opacity .25s ease;
 -moz-transition: opacity .25s ease;}
-
 .compTile:hover #overlay {opacity:1;
 display: block;
 position: absolute;
 cursor: pointer;}
 
 #plus       {  font-family:Helvetica;
-               line-height: 100%; /*175%*/
+               line-height: 24vh; /*175%*/
                font-weight:900;
                color:rgba(255,255,255,.85);
                font-size:96px;}
 
 #search{
-  height: 50px;
+  height: 5vh;
   width: 60%;
   margin-left: 2%;
   margin-top: 1.5%;
-  font-size: 45px;
+  font-size: 4.2vh;
+  line-height: 6.1vh;
   font-family: 'Quattrocento Sans', sans-serif;
   padding-left: 10px;
   -webkit-border-radius: 30px;
@@ -437,7 +438,7 @@ cursor: pointer;}
 #compareButton{
   width: 75%;
   height: 40px;
-  font-size: 25px;
+  font-size: 3vh;
   font-family: 'Quattrocento Sans', sans-serif;
   background-color: transparent;
   border: 2px;
@@ -465,9 +466,11 @@ cursor: pointer;}
   height: 100vh;
   text-align: center;
   margin-bottom: 30px;
+  margin-left: 20vw;
 }
 
 #space h1 {
+  padding-top: 3%;
   text-align: center;
   vertical-align: middle;
 }
@@ -485,7 +488,7 @@ cursor: pointer;}
 .compname{
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 2.2vh;
+  font-size: 2vh;
 }
 
 h4{
@@ -494,13 +497,14 @@ h4{
 
 #tocompare{
   margin-top: 0px;
-  font-size: 150%;
+  font-size: 4vh;
 }
 
 #explore{
   margin-top: 0px;
-  margin-bottom: 1%;
-  font-size: 5.8vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 5vh;
   margin-left: 22.5%;
 }
 
@@ -508,11 +512,11 @@ h4{
   z-index: 10000;
   position: absolute;
   width: 3%;
-  top: 50px;
-  left: 92%;
+  top: 27px;
+  left: 89%;
 }
 
 #listView{
-  padding-top: 1.5%;
+  padding-top: 0.8%;
   height: 100vh;
 }
