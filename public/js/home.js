@@ -68,17 +68,19 @@ $('#search').bind('input',function(){
 	else{
 
 		for(var i = 0; i < matches.length; i++){
-			if(i < 4){
+			if(i < 5){
 				two = 1;
 			}
-			else if(i < 8){
+			else if(i < 10){
 				two = 2;
 			}
-			else if(i < 12){
+			else if(i < 15){
 				two = 3;
 			}
 
-			$("#row"+two).append("<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + matches[i].name + "\")'><span id='plus'>+</span></div><h3>"+matches[i].name+"</h3><p></p></div></div>");//+matches[i].inner+"</p></div></div>");
+			var tile = "<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + matches[i].name + "\")'><span id='plus'>+</span></div><image class = 'compimg' src = "+matches[i].squareLogo+"><h3 class = 'compname'>"+matches[i].name+"</h3><p></p></div></div>";
+
+			$("#row"+two).append(tile);//+matches[i].inner+"</p></div></div>");
 			two = 0;
 		}
 	}
