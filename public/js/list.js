@@ -22,17 +22,17 @@ $(document).ready(function(){
 
 		for(var h = 0; h < items.length; h++){
 
-			if(h < 4){
+			if(h < 5){
 				one = 1;
 			}
-			else if(h < 8){
+			else if(h < 10){
 				one = 2;
 			}
-			else if(h < 12){
+			else if(h < 15){
 				one = 3;
 			}
 
-			var tile = "<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + items[h].name + "\")'><span id='plus'>+</span></div><image src = "+items[h].squareLogo+"><h3>"+items[h].name+"</h3><p></p></div></div>";//+items[h].inner+"</p></div></div>";
+			var tile = "<div class = 'compTile'><div id='overlay' onclick = 'addToCompare(\"" + items[h].name + "\")'><span id='plus'>+</span></div><image class = 'compimg' src = "+items[h].squareLogo+"><h3 class = 'compname'>"+items[h].name+"</h3><p></p></div></div>";//+items[h].inner+"</p></div></div>";
 
 			$("#row"+one).append(tile);
 
@@ -144,7 +144,6 @@ function scroll(){
 
 	$('html, body').animate({ 
 	   scrollTop: $(document).height()-$(window).height()}, 
-	   1400, 
-	   "easeOutQuint"
+	   1400
 	);
 }
