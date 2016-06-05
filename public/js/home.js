@@ -144,6 +144,28 @@ function removeFromCompare(name){
 
 function scroll(){
 
+	var ctx = $("comp1");
+
+	var data = {
+		labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
+		datasets: [
+			{
+				label: compare[0].name,
+				data: [compare[0].overallRating, compare[0].ceo.pctApprove, compare[0].numberOfRatings]
+			},
+			{
+
+				label: "Average",
+				data: [3.0, 25, 200]
+			}
+		]
+	};
+
+	var myRadarChart = new Chart(ctx, {
+		type: 'radar', 
+		data: data
+	});
+
 	$('html, body').animate({ 
 	   scrollTop: $(document).height()-$(window).height()}, 
 	   1400
