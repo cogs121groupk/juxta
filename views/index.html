@@ -35,14 +35,31 @@
 		<div>
 			<p id="login-or">- OR -</p>
 		</div>
-		<div class="choose-industry">
+<!-- 		<div class="choose-industry">
 			<button id="industry-drop-btn">Choose an Industry</button>
 			<div id="industry-drop-content">
-			    <a href="/home" data-value="design">Design</a>
-			    <a href="/home" data-value="computer_science">Computer Science</a>
-			    <a href="/home" data-value="health">Health & Medicine</a>
+			    <a href="#" onclick="return false;" data-value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</a>
 		  	</div>
-		</div>
+		</div> -->
+		<select id="industry-select">
+		    <option selected disabled>Choose an Industry</option>
+		    <option value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</option>
+		</select>
+		<br><br><br><br>
+<!-- 		<div class="choose-location">
+			<button id="location-drop-btn">Choose an Location</button>
+			<div id="location-drop-content">
+			    <a href="#" onclick="return false;" data-value="San Diego">San Diego</a>
+			    <a href="#" onclick="return false;" data-value="San Fransico">San Fransico</a>
+		  	</div>
+		</div> -->
+		<select id="location-select">
+		    <option selected disabled>Choose an Location</option>
+		    <option value="San Diego">San Diego</option>
+		    <option value="San Fransico">San Fransico</option>
+		</select>
+		<br><br><br><br>
+		<button id="submit">Submit</button>
 	</div>
 </div>
 
