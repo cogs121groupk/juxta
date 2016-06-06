@@ -144,153 +144,404 @@ function removeFromCompare(name){
 
 function scroll(){
 
-	if(!compare[0] === undefined){
+	var min = 2.5;
 
-		var ctx = $("comp1");
+	var max = 4.8;
+
+	if(compare.length > 0){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[0].name,
-					data: [compare[0].overallRating, compare[0].ceo.pctApprove, compare[0].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[0].name,
+		        data: [compare[0].overallRating, compare[0].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(255, 99, 132, 0.9)',
+		        pointBackgroundColor: 'rgba(255, 99, 132, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+					padding: 0
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp1");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
-	if(!compare[1] === undefined){
-
-		var ctx = $("comp2");
+	if(compare.length > 1){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[1].name,
-					data: [compare[1].overallRating, compare[1].ceo.pctApprove, compare[1].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[1].name,
+		        data: [compare[1].overallRating, compare[1].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(157, 230, 147, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(157, 230, 147, 0.9)',
+		        pointBackgroundColor: 'rgba(157, 230, 147, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp2");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
-	if(!compare[2] === undefined){
-
-		var ctx = $("comp3");
+	if(compare.length > 2){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[2].name,
-					data: [compare[2].overallRating, compare[2].ceo.pctApprove, compare[2].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[2].name,
+		        data: [compare[2].overallRating, compare[2].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(15, 82, 168, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(15, 82, 168, 0.9)',
+		        pointBackgroundColor: 'rgba(15, 82, 168, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp3");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
-	if(!compare[3] === undefined){
-
-		var ctx = $("comp4");
+	if(compare.length > 3){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[3].name,
-					data: [compare[3].overallRating, compare[3].ceo.pctApprove, compare[3].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[3].name,
+		        data: [compare[3].overallRating, compare[3].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(85, 210, 230, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(85, 210, 230, 0.9)',
+		        pointBackgroundColor: 'rgba(85, 210, 230, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp4");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
-	if(!compare[4] === undefined){
-
-		var ctx = $("comp5");
+	if(compare.length > 4){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[4].name,
-					data: [compare[4].overallRating, compare[4].ceo.pctApprove, compare[4].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[4].name,
+		        data: [compare[4].overallRating, compare[4].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(255, 157, 0, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(255, 157, 0, 0.9)',
+		        pointBackgroundColor: 'rgba(255, 157, 0, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp5");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
-	if(!compare[5] === undefined){
-
-		var ctx = $("comp6");
+	if(compare.length > 5){
 
 		var data = {
-			labels: ["Overall Rating", "Approval of CEO", "Number of Ratings"],
-			datasets: [
-				{
-					label: compare[5].name,
-					data: [compare[5].overallRating, compare[5].ceo.pctApprove, compare[5].numberOfRatings]
-				},
-				{
-
-					label: "Average",
-					data: [3.0, 25, 200]
-				}
-			]
+			labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+		    datasets: [{
+		        label: compare[5].name,
+		        data: [compare[5].overallRating, compare[5].ceo.pctApprove/20, (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1), (Math.random()*(max-min)+min).toFixed(1)],
+		        backgroundColor: 'rgba(231, 27, 242, 0.5)',
+		        borderWidth: 4,
+		        borderColor: 'rgba(231, 27, 242, 0.9)',
+		        pointBackgroundColor: 'rgba(231, 27, 242, 0.9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    },
+		    {
+		    	label: "Average",
+		    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+		    	backgroundColor: 'rgba(128, 128, 128, .5)',
+		    	borderWidth: 4,
+		        borderColor: 'rgba(128, 128, 128, .9)',
+		        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+		        pointRadius: 7,
+		        pointHoverRadius: 9
+		    }]
 		};
 
-		var myRadarChart = new Chart(ctx, {
-			type: 'radar', 
-			data: data
+		var options = {
+			scale:{
+				pointLabels:{
+					fontSize:20,
+					fontColor: 'rgba(255, 255, 255, 0.9)'
+				},
+				ticks:{
+					beginAtZero: true,
+					max: 5.0,
+					fontSize: 30,
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					backdropColor: 'rgba(0, 0, 0, 1)'
+				},
+				gridLines:{
+					color: 'rgba(255, 255, 255, .99)'
+				}
+			},
+			legend: {
+				labels:{
+					fontColor: 'rgba(255, 255, 255, 0.9)',
+					fontSize: 30,
+				}
+			},
+			title:{
+				fontSize: 27
+			},
+			pointLabel:{
+				fontSize: 20,
+				fontColor: 'rgba(255, 255, 255, 0.9)'
+			}
+		};
+
+		var ctx = document.getElementById("comp6");
+		var myChart = new Chart(ctx, {
+			type: 'radar',
+			data: data,
+			options: options
 		});
 	}
 
