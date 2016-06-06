@@ -2,17 +2,28 @@ $(document).ready(function() {
 	// $.get('/getCategories', function(data){
 	// 	console.log(data);
 	// });
-	// $.get('/getNatData', function(data){
-	// 	console.log(data);
-	// });
 	// $.get('/getSanData', function(data){
 	// 	console.log(data);
 	// });
 	// $.get('/getUserData', function(data){
 	// 	console.log(data);
 	// });
+	$(".choose-industry a").click(chooseIndustry);
+	$(".sidebar-changeInd a").click(chooseIndustry);
+	getIndustry();
 });
 
+function getIndustry(){
+	$.get('/getIndustry', function(data){
+		console.log(data);
+	});
+}
+
+function chooseIndustry(e){
+	var i = $(this).data("value");
+	var json = { 'industry': i };
+	$.post("/postIndustry", json);
+}
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
