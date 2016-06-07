@@ -32,16 +32,30 @@ h2 {
 }
 
 #login-section-first {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   color: auto;
-  background-size: cover;
-  background: #131313 url(public/images/rightfit.jpg) no-repeat center center;
   text-align: center;
+
+  /*background-image: url(/images/rightfit.jpg);*/
+  /*background-image: url('http://www.camelcitydispatch.com/wp-content/uploads/2014/04/puzzle-pieces.jpg');*/
+  background-size: 100vw 90vh;
+
+  /*-webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);*/
+}
+
+#shadow-overlay {
+    height: 80vh;
+    width: 100vw;
+    background-color: rgba(19, 19, 19, 0.85);
 }
 
 #login-title h1 {
-  padding-top: 8%;
+  padding-top: 3%;
 }
 
 #login-title h2 {
@@ -52,11 +66,12 @@ h2 {
   text-align: center;
 }
 
-.start-btn {
+
+.learn-btn {
   background-color: transparent;
   margin-top: 50px;
-  height: 10vh;
-  width: 20vw;
+  height: 8vh;
+  width: 16vw;
   border: 3px;
   border-style: solid;
   border-color: #CC623C;
@@ -64,34 +79,32 @@ h2 {
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
   cursor: pointer;
+  margin-right: 3%;
 }
 
-.start-btn:hover {
+.learn-btn:hover {
   background-color: #CC623C;
   color: #FFFFFF;
 }
 
-#login-arrow {
-  margin-top: 80px;
+.start-btn {
+  background-color: #CC623C;
+  margin-top: 50px;
+  height: 8vh;
+  width: 16vw;
+  border: 0px;
+  /*border-style: solid;*/
+  /*border-color: #FFFFFF;*/
   color: #FFFFFF;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 3vh;
+  cursor: pointer;
 }
 
-#login-arrow a {
-  color: #FFFFFF;
-}
-
-#login-arrow a:visited {
-  color: #FFFFFF;
-}
-
-#login-arrow a:hover {
-  color: #CC623C;
-}
-
-#login-section-second {
-  height: 100vh;
+.login-middle {
+  height: 80vh;
   width: 100vw;
-  background-color: #3399CC;
+  background-color: #131313;
   text-align: center;
 }
 
@@ -120,10 +133,10 @@ ul.more-info {
   margin-left: 4vw;
 }
 
-#login-section-third {
+#login-cta {
   height: 100vh;
   width: 100vw;
-  background-color: #131313;
+  background-color: #3399CC;
   text-align: center;
 }
 
