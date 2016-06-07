@@ -16,7 +16,7 @@ body {
 
 h1 {
   color: #3399CC;
-  font-size: 15vh;
+  font-size: 18vh;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -25,21 +25,33 @@ h2 {
   font-family: 'Quattrocento Sans', sans-serif;
 }
 
+ul {
+  list-style-image: url('/images/whitediamond.png');
+}
+
 .login-page {
   top: -10vh;
   left: 0;
   position: absolute;
 }
 
+/*.shadow-overlay {
+    height: 90vh;
+    width: 100vw;
+    background-color: rgba(19, 19, 19, 0.85);
+}*/
+
 #login-section-first {
-  height: 80vh;
-  width: 100vw;
+  height: 90vh;
+  /*width: 100vw;*/
   color: auto;
   text-align: center;
 
-  /*background-image: url(/images/rightfit.jpg);*/
+  background-color: #131313;
+  /*background-image: url('/images/rightfit.jpg');*/
   /*background-image: url('http://www.camelcitydispatch.com/wp-content/uploads/2014/04/puzzle-pieces.jpg');*/
-  background-size: 100vw 90vh;
+  /*background-size: 100vw 90vh;*/
+  /*background-size: cover;*/
 
   /*-webkit-filter: blur(1px);
   -moz-filter: blur(1px);
@@ -48,34 +60,51 @@ h2 {
   filter: blur(1px);*/
 }
 
-#shadow-overlay {
-    height: 80vh;
-    width: 100vw;
-    background-color: rgba(19, 19, 19, 0.85);
-}
-
 #login-title h1 {
-  padding-top: 3%;
+  padding-top: 8%;
 }
 
 #login-title h2 {
-  margin-top: -2%;
+  margin-top: -5%;
+  margin-bottom: 5%;
 }
 
 #login-title div {
   text-align: center;
 }
 
+.button-container {
+  display: block;
+  overflow: auto;
+
+  width: 100vw;
+  height: 20vh;
+  background-color: green;
+}
+
+.button-wrap {
+  display: block;
+  overflow: auto;
+
+  background-color: #3399CC;
+
+  padding: 3% 0 3% 0;
+
+  /*position: relative;
+  top: 50%;
+  transform: translateY(-50%);*/
+}
 
 .learn-btn {
   background-color: transparent;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   height: 8vh;
   width: 16vw;
-  border: 3px;
+  border: 0px;
   border-style: solid;
-  border-color: #CC623C;
-  color: #CC623C;
+  border-color: #FFFFFF;
+  border-radius: 9px;
+  color: #FFFFFF;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
   cursor: pointer;
@@ -83,71 +112,190 @@ h2 {
 }
 
 .learn-btn:hover {
-  background-color: #CC623C;
+  background-color: transparent;
   color: #FFFFFF;
+  border: 3px;
+  border-color: #FFFFFF;
+  border-style: solid;
 }
 
 .start-btn {
-  background-color: #CC623C;
-  margin-top: 50px;
+  background-color: transparent;
+  /*margin-top: 50px;*/
   height: 8vh;
   width: 16vw;
-  border: 0px;
-  /*border-style: solid;*/
-  /*border-color: #FFFFFF;*/
+  border: 3px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-radius: 9px;
   color: #FFFFFF;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.login-middle {
-  height: 80vh;
+.start-btn:hover {
+  background-color: #FFFFFF;
+  color: #3399CC;
+}
+
+#login-middle {
+  display: block;
+  overflow: auto;
+  /*height: 185vh;*/
+  width: 100vw;
+  background-color: #131313;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#blurb-title {
+  color: #3399CC;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5vh;
+  padding: 4% 0 0 0;
+}
+
+#login-blurb {
+  margin-left: 15vw;
+  text-align: left;
+  padding-bottom: 4%;
+}
+
+#juxta-means {
+  font-size: 8vh;
+  font-weight: bold;
+  /*line-height: 0vh;*/
+  margin-bottom: -3.5vh;
+}
+
+#pronunciation {
+  font-size: 3.8vh;
+}
+
+#prefix {
+  font-style: italic;
+  margin-bottom: -2.5vh;
+}
+
+#prefix-defition {
+  padding-left: 2.5%;
+  margin-bottom: -2.5vh;
+}
+
+#prefix-example {
+  padding-left: 2.5%;
+  color: gray;
+  margin-bottom: 2%;
+}
+
+#noun {
+  font-style: italic;
+  margin-bottom: -2.5vh;
+}
+
+#noun-defition {
+  padding-left: 2.5%;
+  margin-bottom: -2.5vh;
+}
+
+#noun-example {
+  padding-left: 2.5%;
+  color: gray;
+}
+
+.offers-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  overflow: auto;
+  background-color: #3399CC;
+  padding-bottom: 5%;
+}
+
+#offers-title {
+  color: #131313;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5vh;
+  padding: 3% 0 2% 0;
+}
+
+#login-feature1 {
+  width: 40vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#login-feature1 img {
+  height: 40vh;
+  width: 35vw;
+}
+
+#feature1-desc {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  line-height: 4vh;
+}
+
+#feature1-list {
+  text-align: left;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 4vh;
+}
+
+#login-feature2 {
+  width: 40vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#login-feature2 img {
+  height: 40vh;
+  width: 35vw;
+}
+
+#feature2-desc {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  line-height: 4vh;
+}
+
+#feature2-list {
+  text-align: left;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 4vh;
+}
+
+#login-cta {
+  height: 90vh;
   width: 100vw;
   background-color: #131313;
   text-align: center;
 }
 
-.more-info {
-  overflow: hidden;
-  margin: 0;
-  position: absolute;
+#cta-content {
+  position: relative;
   top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-ul.more-info {
-  list-style-type: none;
-}
-
-.more-info-img {
-  height: 50vh;
-  float: left;
-}
-
-.more-info-details {
-  width: 30vw;
-  float: left;
-  margin-left: 4vw;
-}
-
-#login-cta {
-  height: 100vh;
-  width: 100vw;
-  background-color: #3399CC;
-  text-align: center;
+  transform: translateY(-50%);
 }
 
 .linkedin img {
   width: 25%;
-  margin-top: 10%;
+  /*margin-top: 10%;*/
 }
 
 .btn-login {
   background-color: #00ADB5;
-  margin-top: 20%;
   height: 10vh;
   width: 30vw;
   border: none;
@@ -158,61 +306,114 @@ ul.more-info {
 
 #login-or {
   margin: 5% 0 5% 0;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#industry-select {
+  height: 6vh;
+  width: 30vw;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  border: 0px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  cursor: pointer;
+  /*-webkit-appearance: none;*/
+  margin-right: 2%;
+}
+
+#location-select {
+  height: 6vh;
+  width: 20vw;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  border: 0px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  cursor: pointer;
+  /*-webkit-appearance: none;*/
+  margin-right: 3%;
+}
+
+#submit {
+  height: 6vh;
+  width: 10vw;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  font-weight: bold;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  border: 3px;
+  border-style: solid;
+  border-color: #CC623C;
+  border-radius: 4px;
+  cursor: pointer;
+  /*-webkit-appearance: none;*/
+}
+
+#submit:hover {
+  background-color: #CC623C;
+  border: 0px
 }
 
 /* The container <div> - needed to position dropdown content */
-.choose-industry {
+/*.choose-industry {
   position: relative;
   display: inline-block;
-}
+}*/
 
 /* Style dropdown button */
-#industry-drop-btn {
+/*#industry-drop-btn {
   height: 8vh;
   width: 25vw;
   background-color: transparent;
   color: #CC623C;
   font-size: 2.5vh;
-  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  font-family: 'Quattrocento Sans', sans-serif;
   border: 3px;
   border-style: solid;
   border-color: #CC623C;
   cursor: pointer;
-}
+}*/
 
 /* Dropdown content (hidden by default) */
-#industry-drop-content {
+/*#industry-drop-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 25vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     font-size: 2.5vh;
-}
+}*/
 
 /* Links inside dropdown */
-#industry-drop-content a {
+/*#industry-drop-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}
+}*/
 
 /* Change color of dropdown links on hover */
-#industry-drop-content a:hover {
+/*#industry-drop-content a:hover {
   color: #CC623C;
-}
+}*/
 
 /* Show dropdown menu on hover */
-.choose-industry:hover #industry-drop-content {
+/*.choose-industry:hover #industry-drop-content {
     display: block;
-}
+}*/
 
 /* Change the background color of the dropdown button when dropdown content is shown */
-.choose-industry:hover #industry-drop-btn {
+/*.choose-industry:hover #industry-drop-btn {
     background-color: #CC623C;
     color: #FFFFFF;
-}
+}*/
 
 #page-title {
   color: #3399CC; /*white*/
