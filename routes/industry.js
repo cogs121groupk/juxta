@@ -1,5 +1,5 @@
 exports.view = function(req, res){
-	if(req.session.passport.user === undefined){
+	if(req.session.passport === undefined){
 		var data = "";
 	}
 	else{
