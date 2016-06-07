@@ -184,403 +184,92 @@ function scroll(){
 	console.log(queryString);
 
 	$.get(queryString, function(compare){
+		for (var i =1; i<=6; i++){
+			document.getElementById("comp"+i+"div").innerHTML = "<canvas id = 'comp"+i+"' width = '400' height = '400'></canvas>";
+			$("#comp"+i+"div").css("display", "block");
+		}
 
 		if(compare.length > 0){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[0].name,
-			        data: [compare[0].overallRating, compare[0].ceo.pctApprove/20, compare[0].cultureAndValuesRating, compare[0].workLifeBalanceRating, compare[0].seniorLeadershipRating, compare[0].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(255, 99, 132, 0.9)',
-			        pointBackgroundColor: 'rgba(255, 99, 132, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
+			var backgroundColor = ['rgba(255, 99, 132, 0.5)', 'rgba(157, 230, 147, 0.5)', 'rgba(15, 82, 168, 0.5)',
+			'rgba(85, 210, 230, 0.5)','rgba(255, 157, 0, 0.5)', 'rgba(231, 27, 242, 0.5)'];
+			var bpColors = ['rgba(255, 99, 132, 0.9)', 'rgba(157, 230, 147, 0.9)', 'rgba(15, 82, 168, 0.9)',
+			'rgba(85, 210, 230, 0.9)', 'rgba(255, 157, 0, 0.9)', 'rgba(231, 27, 242, 0.9)'];
+			for(var i=0; i<compare.length; i++)
+			{
+				compare[i].ceo.pctApprove = compare[i].ceo.pctApprove < 0 ? 0 : compare[i].ceo.pctApprove;
+				var data = {
+					labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
+				    datasets: [{
+				        label: compare[i].name,
+				        data: [compare[i].overallRating, compare[i].ceo.pctApprove/20, compare[i].cultureAndValuesRating, compare[i].workLifeBalanceRating, compare[i].seniorLeadershipRating, compare[i].compensationAndBenefitsRating],
+				        backgroundColor: backgroundColor[i],
+				        borderWidth: 4,
+				        borderColor: bpColors[i],
+				        pointBackgroundColor: bpColors[i],
+				        pointRadius: 7,
+				        pointHoverRadius: 9
+				    },
+				    {
+				    	label: "Average",
+				    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
+				    	backgroundColor: 'rgba(128, 128, 128, .5)',
+				    	borderWidth: 4,
+				        borderColor: 'rgba(128, 128, 128, .9)',
+				        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
+				        pointRadius: 7,
+				        pointHoverRadius: 9
+				    }]
+				};
+				var plFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 20 : 12;
+				var tickFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 30 : 22;
+				var legendFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 30 : 18;
+				var titleFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 27 : 19;
+				var options = {
+					scale:{
+						pointLabels:{
+							fontSize: plFont,
+							fontColor: 'rgba(255, 255, 255, 0.9)'
+						},
+						ticks:{
+							beginAtZero: true,
+							max: 5.0,
+							fontSize: tickFont,
+							fontColor: 'rgba(255, 255, 255, 0.9)',
+							backdropColor: 'rgba(0, 0, 0, 1)'
+						},
+						gridLines:{
+							color: 'rgba(255, 255, 255, .99)'
+						}
+					},
+					legend: {
+						labels:{
+							fontColor: 'rgba(255, 255, 255, 0.9)',
+							fontSize: legendFont,
+							padding: 0
+						}
+					},
+					title:{
+						fontSize: titleFont
+					},
+					pointLabel:{
+						fontSize: plFont,
 						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
 					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-						padding: 0
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
+				};
 
-			var ctx = document.getElementById("comp1");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
+				var ctx = document.getElementById("comp"+(i+1));
+				var myChart = new Chart(ctx, {
+					type: 'radar',
+					data: data,
+					options: options
+				});
+			}
 		}
 
-		if(compare.length > 1){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[1].name,
-			        data: [compare[1].overallRating, compare[1].ceo.pctApprove/20, compare[1].cultureAndValuesRating, compare[1].workLifeBalanceRating, compare[1].seniorLeadershipRating, compare[1].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(157, 230, 147, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(157, 230, 147, 0.9)',
-			        pointBackgroundColor: 'rgba(157, 230, 147, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
-						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
-					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
-
-			var ctx = document.getElementById("comp2");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
+		for (var i = compare.length; i<6; i++){
+			$("#comp"+(i+1)+"div").css("display", "none");
 		}
 
-		if(compare.length > 2){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[2].name,
-			        data: [compare[2].overallRating, compare[2].ceo.pctApprove/20, compare[2].cultureAndValuesRating, compare[2].workLifeBalanceRating, compare[2].seniorLeadershipRating, compare[2].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(15, 82, 168, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(15, 82, 168, 0.9)',
-			        pointBackgroundColor: 'rgba(15, 82, 168, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
-						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
-					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
-
-			var ctx = document.getElementById("comp3");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
-		}
-
-		if(compare.length > 3){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[3].name,
-			        data: [compare[3].overallRating, compare[3].ceo.pctApprove/20, compare[3].cultureAndValuesRating, compare[3].workLifeBalanceRating, compare[3].seniorLeadershipRating, compare[3].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(85, 210, 230, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(85, 210, 230, 0.9)',
-			        pointBackgroundColor: 'rgba(85, 210, 230, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
-						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
-					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
-
-			var ctx = document.getElementById("comp4");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
-		}
-
-		if(compare.length > 4){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[4].name,
-			        data: [compare[4].overallRating, compare[4].ceo.pctApprove/20, compare[4].cultureAndValuesRating, compare[4].workLifeBalanceRating, compare[4].seniorLeadershipRating, compare[4].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(255, 157, 0, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(255, 157, 0, 0.9)',
-			        pointBackgroundColor: 'rgba(255, 157, 0, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
-						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
-					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
-
-			var ctx = document.getElementById("comp5");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
-		}
-
-		if(compare.length > 5){
-
-			var data = {
-				labels: ["Overall Rating", "CEO", "Culture	", "Work Life Balance", "Leadership", "Compensation"],
-			    datasets: [{
-			        label: compare[5].name,
-			        data: [compare[5].overallRating, compare[5].ceo.pctApprove/20, compare[5].cultureAndValuesRating, compare[5].workLifeBalanceRating, compare[5].seniorLeadershipRating, compare[5].compensationAndBenefitsRating],
-			        backgroundColor: 'rgba(231, 27, 242, 0.5)',
-			        borderWidth: 4,
-			        borderColor: 'rgba(231, 27, 242, 0.9)',
-			        pointBackgroundColor: 'rgba(231, 27, 242, 0.9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    },
-			    {
-			    	label: "Average",
-			    	data: [4.0, 3.0, 2.5, 2.5, 2.5, 2.5],
-			    	backgroundColor: 'rgba(128, 128, 128, .5)',
-			    	borderWidth: 4,
-			        borderColor: 'rgba(128, 128, 128, .9)',
-			        pointBackgroundColor: 'rgba(128, 128, 128, .9)',
-			        pointRadius: 7,
-			        pointHoverRadius: 9
-			    }]
-			};
-
-			var options = {
-				scale:{
-					pointLabels:{
-						fontSize:20,
-						fontColor: 'rgba(255, 255, 255, 0.9)'
-					},
-					ticks:{
-						beginAtZero: true,
-						max: 5.0,
-						fontSize: 30,
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						backdropColor: 'rgba(0, 0, 0, 1)'
-					},
-					gridLines:{
-						color: 'rgba(255, 255, 255, .99)'
-					}
-				},
-				legend: {
-					labels:{
-						fontColor: 'rgba(255, 255, 255, 0.9)',
-						fontSize: 30,
-					}
-				},
-				title:{
-					fontSize: 27
-				},
-				pointLabel:{
-					fontSize: 20,
-					fontColor: 'rgba(255, 255, 255, 0.9)'
-				}
-			};
-
-			var ctx = document.getElementById("comp6");
-			var myChart = new Chart(ctx, {
-				type: 'radar',
-				data: data,
-				options: options
-			});
-		}
 	});
 
 	$('html, body').animate({ 
