@@ -1,3 +1,9 @@
 exports.view = function(req, res){
-	res.render("industry");
+	if(req.session.passport === undefined){
+		var data = {firstName: "User", lastName: "", pictureUrl: "../images/profilepic.png"};
+	}
+	else{
+		var data = req.session.passport.user;
+	}
+	res.render("industry",{users: data});
 }

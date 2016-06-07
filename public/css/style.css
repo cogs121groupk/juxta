@@ -225,11 +225,42 @@ ul.more-info {
 
 .container {
   overflow: hidden;
-  top: 0;
-  left: 0;
-  position: absolute;
+
+}
+.allthreegraph{
+  background: rgba(255,255,240,.3);
+  float: left;
+  margin-left: 10vw;
+  width: 80%;
+  z-index: 1000;
 }
 
+.graph{
+  float: left;
+  width: 60%;
+  z-index: 1000;
+}
+.video{
+  float: left;
+  margin-left: 10vw;
+  margin-top: 5vw;
+  width: 80%;
+}
+
+.video h2{
+  color: #3399CC; /*white*/
+  text-align: center;
+  font-size: 7vh;
+  font-weight: bold;
+  margin-top: -2%;
+  font-family: 'Oswald', sans-serif;
+}
+.video iframe{
+  margin-left: 10vw;
+}
+.video p{
+  margin-left: 12vw;
+}
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -242,7 +273,7 @@ ul.more-info {
 
 .not-sidebar {
   margin-left: 20vw;
-  height: 100vh;
+  height: 300vh;
   width: 78vw;
   float: left;
   overflow: hidden;
@@ -269,10 +300,15 @@ ul.more-info {
 }
 
 .profile img {
-  height: 80px;
-  width: 80px;
-  padding-top: 30px;
+  width: 70%;
+  margin-top: 30px;
   margin-bottom: -10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px 2px #3399cc;
+}
+
+#profName{
+  font-size: 150%;
 }
 
 .tabs {
@@ -476,6 +512,7 @@ cursor: pointer;}
 
 #space{
   /*height: 1700px;*/
+  display: none;
   height: 95vh;
   text-align: center;
   margin-bottom: 30px;
@@ -551,3 +588,6 @@ h4{
   float: left;
   width: 100%;
 }
+#ChartSpace{
+  width: 50%;
+} 

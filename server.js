@@ -11,10 +11,16 @@ const MongoStore = require("connect-mongo")(session);
 
 var models = require('./models');
 
+//graph
+//var Chart = require('./node_modules/chart.js/dist/Chart.min.js');
+//var myChart = new Chart({...})
+
+
 require('dotenv').config();
 
 require("dotenv").load();
 var models = require("./models");
+var Promise = require('bluebird');
 var db = mongoose.connection;
 
 var router = { 
@@ -95,14 +101,14 @@ passport.use(new strategy.linkedin({
    			if(err){
    				console.log(err);
    			}else{
-   				console.log("User added: " + data);
+   				//console.log("User added: " + data);
    			}
    		});
    		return done(null, newUser);
 
     } else {
         // (3) since the user is found, update user’s information
-        user.twitterID = profile.id;
+        user.profileID = profile.id;
         user.token = token;
         user.firstName = profile._json.firstName;
         user.lastName = profile._json.lastName;
@@ -114,7 +120,7 @@ passport.use(new strategy.linkedin({
      			if(err){
      				console.log(err);
      			}else{
-     				console.log("User updated: " + data);
+     				//console.log("User updated: " + data);
      			}
      		});
         process.nextTick(function() {
@@ -137,7 +143,9 @@ passport.deserializeUser(function(user, done) {
 app.get('/auth/linkedin', passport.authenticate('linkedin'));
 app.get('/auth/linkedin/callback',
   passport.authenticate('linkedin', { successRedirect: '/home',
-                                     failureRedirect: '/' }));
+                                     failureRedirect: '/' }), function(req, res){
+    req.session.user = req.user;
+  });
 app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/');
@@ -149,13 +157,19 @@ app.get("/home", router.home.view);
 app.get("/industry", router.industry.view);
 
 //Routes for JSON data
-app.get("/getBusinessLocationData", router.index.getBusinessLocationData)
+app.get("/getBusinessLocationData", router.index.getBusinessLocationData);
+
+app.get("/getUserPicture", function(req, res){
+  console.log(req.session.user);
+  return res.json(req.session.user.pictureUrl);
+});
 
 app.get("/getCategories", router.data.getCategories);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
 app.get("/getIndustry", router.data.getIndustry);
 app.get("/getSanDiegoCompanies", router.data.getSanDiegoCompanies);
+app.get("/compareCompanies", router.data.compareCompanies);
 
 //Post routes
 app.post("/postIndustry", router.data.postIndustry);
