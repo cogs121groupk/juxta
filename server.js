@@ -11,10 +11,16 @@ const MongoStore = require("connect-mongo")(session);
 
 var models = require('./models');
 
+//graph
+//var Chart = require('./node_modules/chart.js/dist/Chart.min.js');
+//var myChart = new Chart({...})
+
+
 require('dotenv').config();
 
 require("dotenv").load();
 var models = require("./models");
+var Promise = require('bluebird');
 var db = mongoose.connection;
 
 var router = { 

@@ -212,9 +212,20 @@ ul.more-info {
 
 .container {
   overflow: hidden;
-  top: 0;
-  left: 0;
-  position: absolute;
+
+}
+.allthreegraph{
+  background: rgba(255,255,240,.3);
+  float: left;
+  margin-left: 10vw;
+  width: 80%;
+  z-index: 1000;
+}
+
+.graph{
+  float: left;
+  width: 30%;
+  z-index: 1000;
 }
 
 .sidebar {
@@ -544,3 +555,6 @@ h4{
   float: left;
   width: 100%;
 }
+#ChartSpace{
+  width: 50%;
+} 

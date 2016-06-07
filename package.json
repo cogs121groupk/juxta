@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.0-rc.5",
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.4.0",
     "body-parser": "^1.15.0",
+    "chart.js": "^2.1.4",
     "connect-mongo": "^1.1.0",
     "cookie-parser": "^1.4.1",
     "dotenv": "^2.0.0",

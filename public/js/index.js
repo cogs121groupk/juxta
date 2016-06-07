@@ -1,10 +1,11 @@
+
 $(document).ready(function() {
 	// $.get('/getCategories', function(data){
 	// 	console.log(data);
 	// });
-	// $.get('/getSanData', function(data){
-	// 	console.log(data);
-	// });
+	$.get('/getSanData', function(data){
+		console.log(data);
+	});
 	// $.get('/getUserData', function(data){
 	// 	console.log(data);
 	// });
