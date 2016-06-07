@@ -1,4 +1,9 @@
 exports.view = function(req, res){
-	console.log(req.session.passport.user);
-	res.render("industry",{user: req.session.passport.user});
+	if(req.session.passport.user === undefined){
+		var data = "";
+	}
+	else{
+		var data = req.session.passport.user;
+	}
+	res.render("industry",{users: data});
 }
