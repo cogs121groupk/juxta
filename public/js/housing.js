@@ -1,38 +1,128 @@
+
+var jobType = [];
+var jobs;
+
 $(document).ready(function(){
-    console.log("dsada");
-    var ctx = document.getElementById("SFhousing");
+    
+    function getPromise() {
+        return new Promise(function(resolve, reject){
+            $.get('/getIndustry', function(sessionData){
+                $.get('/getSanData', function(data){
+                    jobs = data[2015][sessionData.industry];;
+                    for (var i = 0; i<jobs.length; i++){
+                        jobType.push(jobs[i].title);
+                    }
+                    resolve();
+                });
+            });
+        });
+    }
+
+    var promise = getPromise();
+    promise.then(function(){
+        for(var i=0; i<jobType.length; i++){ 
+            const template = "<option value='"+jobType[i]+"'>"+jobType[i]+"</option>";
+            $('#job-select').append(template);
+        }
+        $("#job-select").change(chooseJob);
+        createGraph({}, true);
+    });
+    // test();
+
+});
+
+function chooseJob(e){
+    var j = $(this).val();
+    var data;
+    for(var i=0; i<jobs.length; i++){
+        if(jobs[i].title == j){
+            data = jobs[i];
+            break;
+        }
+    }
+    var title = truncate(data.title, 15);
+    var salaryData = 
+    {
+        label: title,
+        price: data.annual_mean/48,
+        type: "job"
+    }
+
+    createGraph(salaryData, false);
+    
+}
+
+function createGraph(salary, initial){
+    document.getElementById("graph").innerHTML = "<canvas id='housing' width='100' height='100'></canvas>";
+    var ctx = document.getElementById("housing");
     
     //1. have array
+    // var housingData = [
+    //     {
+    //         label: "downtown SF",
+    //         price: 3500,
+    //         type: "housing"
+    //     },
+    //     {
+    //         label: "Palo Alto",
+    //         price: 2500,
+    //         type: "housing"
+    //     },
+    //     {
+    //         label: "San Jose",
+    //         price: 2362,
+    //         type: "housing"
+    //     },
+    //     {
+    //         label: "Union City",
+    //         price: 2200,
+    //         type: "housing"
+    //     }
+    // ]
+
+
+    // var salaryData = 
+    // {
+    //     label: "architect CS",
+    //     price: 3500,
+    //     type: "job"
+    // }
+
+    if (initial){
+        var title = truncate(jobs[0].title, 15);
+        salary = 
+        {
+            label: title,
+            price: jobs[0].annual_mean/48,
+            type: "job"
+        }
+    }
+
+
     var housingData = [
         {
-            label: "downtown SF",
-            price: 3500,
+            label: "Chula Vista",
+            price: 1300,
             type: "housing"
         },
         {
-            label: "Palo Alto",
-            price: 2500,
+            label: "El Cajon",
+            price: 1450,
             type: "housing"
         },
         {
-            label: "San Jose",
-            price: 2362,
+            label: "Downtown",
+            price: 2000,
             type: "housing"
         },
         {
-            label: "Union City",
-            price: 2200,
+            label: "Kearny Mesa",
+            price: 1800,
             type: "housing"
         }
     ]
-    var salaryData = 
-    {
-        label: "architect CS",
-        price: 3500,
-        type: "job"
-    }
-    
-    housingData.push(salaryData);
+
+    housingData.push(salary);
     // 2. sort array
     var data = housingData;
     function compare(a,b) {
@@ -79,7 +169,7 @@ $(document).ready(function(){
         }
     });
     
-console.log(dataLabel)
+// console.log(dataLabel)
     
     var SFData = new Chart(ctx, {
         type: 'bar',
@@ -131,45 +221,12 @@ console.log(dataLabel)
             }
         }
     });
+}
 
-
-
-    // var ctx = document.getElementById("SDhousing");
-    // var SDhousingData = new Chart(ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: ["Downtown SD", "chula vista", "el capon", "Kearney Mesa"],
-    //         datasets: [{
-    //             label: 'San Diego Housing Price',
-    //             data: [2000, 1300, 1450, 1800],
-    //             backgroundColor: [
-    //                 'rgba(255, 99, 132, 0.2)',
-    //                 'rgba(54, 162, 235, 0.2)',
-    //                 'rgba(255, 206, 86, 0.2)',
-    //                 'rgba(75, 192, 192, 0.2)'
-    //             ],
-    //             borderColor: [
-    //                 'rgba(255,99,132,1)',
-    //                 'rgba(54, 162, 235, 1)',
-    //                 'rgba(255, 206, 86, 1)',
-    //                 'rgba(75, 192, 192, 1)'
-    //             ],
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             yAxes: [{
-    //                 ticks: {
-    //                     beginAtZero:true,
-    //                     max:4000
-    //                 }
-    //             }]
-    //         }
-    //     }
-    // });
-});
-
-
+function truncate( word, n ){
+    if (word.length > n)
+        word = word.substring(0,n)+"...";
+    return word;
+};
 
 
