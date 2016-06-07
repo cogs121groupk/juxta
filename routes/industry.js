@@ -1,3 +1,4 @@
 exports.view = function(req, res){
-	res.render("industry");
+	console.log(req.session.passport.user);
+	res.render("industry",{user: req.session.passport.user});
 }

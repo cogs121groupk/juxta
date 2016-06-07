@@ -256,10 +256,15 @@ ul.more-info {
 }
 
 .profile img {
-  height: 80px;
-  width: 80px;
-  padding-top: 30px;
+  width: 70%;
+  margin-top: 30px;
   margin-bottom: -10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px 2px #3399cc;
+}
+
+#profName{
+  font-size: 150%;
 }
 
 .tabs {

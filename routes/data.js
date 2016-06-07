@@ -89,6 +89,6 @@ exports.compareCompanies = function(req, res){
 	}, function(err){
 
 		console.log(data.length);
-		res.json(data);
+		return res.json(data);
 	});
 }

@@ -7,8 +7,9 @@
 	</div>
 
 	<div class = "profile">
-		<img src="/images/profilepic.png">
-		<p>Name</p>
+		<img id = "profPic" src="{{users.pictureUrl}}">
+		<p id = "profName">{{users.firstName}} {{users.lastName}}</p>
+		<p>{{users.industry}}</p>
 		<div class="sidebar-changeInd">
 			<button id="sidebar-indDropBtn">Change Your Industry</button>
 			<div id="sidebar-indDropContent">

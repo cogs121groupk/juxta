@@ -13,6 +13,7 @@ var two = 0;
 var compare = [];
 
 $(document).ready(function(){
+
 	$.get("/getSanDiegoCompanies", function(data){
 		// for(var i = 0; i < data.employers.length; i++){
 		// 	console.log(data.employers[i]);

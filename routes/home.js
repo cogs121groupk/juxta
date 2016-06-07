@@ -1,4 +1,5 @@
 
 exports.view = function(req, res) {
-    res.render("home");
+	console.log(req.session.passport.user);
+    res.render("home", {users: req.session.passport.user});
 };
