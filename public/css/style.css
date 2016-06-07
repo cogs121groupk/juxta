@@ -538,3 +538,7 @@ h4{
   float: left;
   width: 100%;
 }
+
+#ChartSpace{
+  width: 50%;
+} 
