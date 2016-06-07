@@ -210,23 +210,73 @@ ul.more-info {
   font-family: 'Oswald', sans-serif;
 }
 
+#page-title h3{
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+
+
+
 .container {
   overflow: hidden;
 
 }
 .allthreegraph{
-  background: rgba(255,255,240,.3);
   float: left;
-  margin-left: 10vw;
-  width: 80%;
+  width: 100%;
   z-index: 1000;
+  margin-bottom: 5vh;
 }
 
-.graph{
+#jobSelect{
   float: left;
-  width: 60%;
+  display: inline-block;
+  width: 47%;
   z-index: 1000;
+  text-align:center;
 }
+
+#job-select{
+  font-size: 2.5vh;
+}
+
+#jobSelect h3{
+  margin: 0px;
+}
+
+#salaryLegend{
+  text-align: center;
+}
+
+#salaryLegend span{
+  display: block;
+}
+
+#jobSalaryBox{
+  z-index: 1000000;
+  background: blue;
+  display: block;
+  width: 2vh;
+  height: 2vh;
+}
+
+#rentBox{
+  z-index: 100000;
+  background: red;
+  display:block;
+  width: 2vh;
+  height: 2vh;
+}
+
+h5{
+  margin: 0px;
+}
+
+#jobSelect span{
+  display: inline-block;
+  margin-left: 0.5vh;
+}
+
 .video{
   float: left;
   margin-left: 10vw;
@@ -260,7 +310,7 @@ ul.more-info {
 
 .not-sidebar {
   margin-left: 20vw;
-  height: 300vh;
+  height: 200vh;
   width: 78vw;
   float: left;
   overflow: hidden;
@@ -576,5 +626,25 @@ h4{
   width: 100%;
 }
 #ChartSpace{
-  width: 50%;
+  height: 90vh;
+  float: left;
+  width: 100%;
+  margin-bottom: 15vh;
 } 
+
+#topSalaryGraph{
+  float: left;
+  display: inline-block;
+  width: 50%;
+}
+
+#topSalaryGraph h3{
+  margin: 0px;
+  text-align: center;
+}
+
+#graph{
+  margin-top: 1vh;
+}
+
+

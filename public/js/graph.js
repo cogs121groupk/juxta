@@ -36,7 +36,8 @@ $( document ).ready(function() {
                         pointHoverBackgroundColor: hue,
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointHoverBorderWidth: 2,
-                        pointRadius: 1,
+                        pointRadius: 7,
+                        pointBackgroundColor: hue,
                         pointHitRadius: 10,
                         data: result[job]
                     };
@@ -61,11 +62,42 @@ $( document ).ready(function() {
                     type: 'line',
                     data: data,
                     options: {
+                        reponsive: true,
+                        maintainAspectRatio: false,
+                        title:{
+                          display: true,
+                          text: "Salary Trends, 2011-2015 ($ per year):",
+                          fontSize: 35,
+                          fontColor: "#FFFFFF"
+                        },
+                        scales:{
+                          yAxes:[{
+                            gridLines:{
+                              lineWidth: 0.5,
+                              color: "#FFFFFF"
+                            },
+                            ticks:{
+                              fontSize: 20,
+                              fontColor: "#FFFFFF"
+                            }
+                          }],
+                          xAxes:[{
+                            gridLines:{
+                              lineWidth: 0.5,
+                              color: "#FFFFFF"
+                            },
+                            ticks:{
+                              fontSize: 35, 
+                              fontColor: "#FFFFFF"
+                            }
+                          }]
+                        },
                         legend:{
                             fullWidth:true,
                             position:"bottom",
                             labels:{
-                                fontSize:8
+                                fontSize:35,
+                                fontColor: "#FFFFFF"
                             }
                         },
                         xAxes: [{
