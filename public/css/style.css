@@ -542,3 +542,17 @@ h4{
 #ChartSpace{
   width: 50%;
 } 
+.help{
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top: 145px;
+    right:70px;
+    cursor: pointer;
+}
