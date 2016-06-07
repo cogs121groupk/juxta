@@ -1,66 +1,133 @@
 
 <div class=login-page>
 	<div id="login-section-first">
+	<div class="shadow-overlay">
 		<div id="login-title">
 			<h1>JUXTA</h1>
-			<h2>A tool for exploring industries<br>to help you find your <em>closest</em> match</h2>
-			<a href="#login-section-third">
-				<button class="start-btn">
-					Get Started
-				</button>
-			</a>
+			<h2>A tool for exploring companies in San Diego<br>to help you find your <em>closest</em> match</h2>
+			<div class="button-contianer">
+				<div class="button-wrap">
+					<a href="#login-middle">
+						<button class="learn-btn">
+							Learn More
+						</button>
+					</a>
+					<a href="#login-cta">
+						<button class="start-btn">
+							Get Started
+						</button>
+					</a>
+				</div>
+			</div>
 		</div>
-		<div id="login-arrow">
-				<a href="#login-section-second"><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></a>
+	</div>
+	</div>
+
+	<div id="login-middle">
+		<div id="blurb-title">What is Juxta?</div>
+
+		<div id="login-blurb">
+			<p id="juxta-means">
+				juxta
+			</p>
+			<p id="pronunciation">
+				/ˌjəkstə/
+			</p>
+			<p id="prefix">
+				prefix
+			</p>
+			<p id="prefix-defition">
+				near, nearby, close.
+			</p>
+			<p id="prefix-example">
+				"<i>Juxtaspinal</i> means <i>near the spinal column</i>."
+			</p>
+			<p id="noun">
+				noun
+			</p>
+			<p id="noun-defition">
+				a tool to be used in your career field exploration or job search process to help you find the closeset match.
+			</p>
+			<p id="noun-example">
+				"Linda used <em>Juxta</em> to figure out which company most closely matched her preferences."
+			</p>
+		</div>
+
+		<div class="offers-wrapper">
+			<div id="offers-title">What Juxta Offers</div>
+			<div id="login-feature1">
+				<p><b>Compare Companies</b></p>
+				<img src="/images/radar.png" />
+				<p id="feature1-desc">
+					Whether it's exploring what companies are out there or trying to decide on a company to work for, it can be difficult to efficiently compare companies. Although there is a lot of information out there about them, there is no centralized place to view that information. Our solution allows you to:
+					<ul id="feature1-list">
+						<li>search for companies</li>
+						<li>add/remove them to a comparison list</li>
+						<li>visually compare those companies against each other and against the industry average using radar charts</li>
+					</ul>
+				</p>
+			</div>
+
+			<div id="login-feature2">
+				<p><b>Industry Statistics</b></p>
+				<img src="/images/radar.png" />
+				<p id="feature2-desc">
+					For your chosen industry, Juxta shows you relevant visual information to help you have a better picture of what that industry has to offer and its trends, allowing you to make a more informed decision of which industry to pursue or to simple know more about your own industry. You will be able to:
+					<ul id="feature2-list">
+						<li>compare salaries for last 5 years</li>
+						<li>compare top 5 paid positions trending</li>
+						<li>compare positions' salaries vs. income</li>
+					</ul>
+				</p>
+			</div>
 		</div>
 	</div>
 
-	<div id="login-section-second">
-		<ul class="more-info">
-			<li class="more-info-img">
-				<img src="https://www.sassieshop.com/site/demos/clients/reports/linegraph.gif" />
-			</li>
-			<li class="more-info-details">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-			</li>
-		</ul>
-	</div>
+	<div id="login-cta">
+		<div id="cta-content">
 
-	<div id="login-section-third">
-		<div class="linkedin">
-			<a href="/auth/linkedin">
-				<img src="../public/images/linFlat.png"/>
-				<!-- <button class="btn-login">Click here to log in with LinkedIn</button> -->
-			</a>
+			<div class="linkedin">
+				<a href="/auth/linkedin">
+					<img src="/images/linFlat.png"/>
+					<!-- <button class="btn-login">Click here to log in with LinkedIn</button> -->
+				</a>
+			</div>
+
+			<div>
+				<p id="login-or">- OR -</p>
+			</div>
+
+			<div>
+				<p style="text-align: left; margin-left: 17%">Please choose both an industry and a location:</p>
+			</div>
+
+			<!-- <div class="choose-industry">
+				<button id="industry-drop-btn">Choose an Industry</button>
+				<div id="industry-drop-content">
+				    <a href="#" onclick="return false;" data-value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</a>
+			  	</div>
+			</div> -->
+			<select id="industry-select">
+			    <option selected disabled>Choose an Industry</option>
+			    <option value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</option>
+			</select>
+
+			<!-- <div class="choose-location">
+				<button id="location-drop-btn">Choose an Location</button>
+				<div id="location-drop-content">
+				    <a href="#" onclick="return false;" data-value="San Diego">San Diego</a>
+				    <a href="#" onclick="return false;" data-value="San Fransico">San Fransico</a>
+			  	</div>
+			</div> -->
+			<select id="location-select">
+			    <option selected disabled>Choose a Location</option>
+			    <option value="San Diego">San Diego</option>
+			    <!-- <option value="San Fransico">San Fransico</option> -->
+			</select>
+
+			<button id="submit">GO</button>
+
 		</div>
-		<div>
-			<p id="login-or">- OR -</p>
-		</div>
-<!-- 		<div class="choose-industry">
-			<button id="industry-drop-btn">Choose an Industry</button>
-			<div id="industry-drop-content">
-			    <a href="#" onclick="return false;" data-value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</a>
-		  	</div>
-		</div> -->
-		<select id="industry-select">
-		    <option selected disabled>Choose an Industry</option>
-		    <option value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</option>
-		</select>
-		<br><br><br><br>
-<!-- 		<div class="choose-location">
-			<button id="location-drop-btn">Choose an Location</button>
-			<div id="location-drop-content">
-			    <a href="#" onclick="return false;" data-value="San Diego">San Diego</a>
-			    <a href="#" onclick="return false;" data-value="San Fransico">San Fransico</a>
-		  	</div>
-		</div> -->
-		<select id="location-select">
-		    <option selected disabled>Choose an Location</option>
-		    <option value="San Diego">San Diego</option>
-		    <!-- <option value="San Fransico">San Fransico</option> -->
-		</select>
-		<br><br><br><br>
-		<button id="submit">Submit</button>
 	</div>
 </div>
 
