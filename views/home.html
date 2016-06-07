@@ -1,43 +1,60 @@
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>Industry trend</title>
-	<script type="text/html" src="../public/js/jquery.min.js"></script>
-	<script type="text/html" src="../node_modules/chart.js/dist/Chart.min.js"></script>
-	<script type="text/html" src="../public/js/graph.js"></script>
-    
-   
 
-</head>
- <body>
+	<div id = "matches">
 
-<div id = "ChartSpace">
-<canvas id="myChart" width="400" height="400"></canvas>
+		<div class = "compRow" id = "row1">
+
+		</div>
+
+		<div class = "compRow" id = "row2">
+
+		</div>
+
+		<div class = "compRow" id = "row3">
+
+		</div>
+
+	</div>
+
+	<div id = "compare">
+
+		<h3 id = "tocompare">To Compare:</h3>
+
+		<button id = "compareButton" onclick = "scroll()">Compare!</button>
+
+	</div>
 </div>
 
-<!--           
-<div class = "container">
-    {{> sidebar}}
-<canvas  id="myChart" width="400" height="400"></canvas>
-<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-<script src="../public/js/graph.js"></script>
 
+<div id = "space">
 
-    <div class = "not-sidebar">
+	<div id = "comprow1">
 
-      <div id="page-title">
-        	<p>Your Industry</p>
-      </div>
+		<div class = "comp1div">
 
-      <div class = "content">
-          
-          
-         
-      </div>
-        <img src = "/images/yourIndustryContentFiller.png" width="650px">
-	
-	 
-    </div>
-</div> -->
-</body>
-</html>
+			<canvas id = "comp1" width = "400" height = "400"></canvas>
+		</div>
+
+		<div class = "comp1div">	
+			<canvas id = "comp2" width = "400" height = "400"></canvas>
+		</div>
+
+		<div class = "comp1div">
+			<canvas id = "comp3" width = "400" height = "400"></canvas>
+		</div>
+
+	</div>
+
+	<div id = "comprow2">
+		<div class = "comp1div">
+			<canvas id = "comp4" width = "400" height = "400"></canvas>
+		</div>
+
+		<div class = "comp1div">
+			<canvas id = "comp5" width = "400" height = "400"></canvas>
+		</div>
+
+		<div class = "comp1div">
+			<canvas id = "comp6" width = "400" height = "400"></canvas>
+		</div>
+	</div>
+</div>

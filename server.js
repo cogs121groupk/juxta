@@ -26,10 +26,8 @@ var db = mongoose.connection;
 var router = { 
 	  index: require("./routes/index"),
     home: require("./routes/home"),
-    map: require("./routes/maps"),
     data: require("./routes/data"),
-    list: require("./routes/list"),
-    graph:require("./routes/graph")//delete later
+    industry: require("./routes/industry")
 };
 
 var parser = {
@@ -154,9 +152,7 @@ app.get('/logout', function(req, res){
 // Routes for pages
 app.get("/", router.index.view);
 app.get("/home", router.home.view);
-app.get("/map", router.map.view);
-app.get("/list", router.list.view);
-app.get("/graph", router.graph.view)
+app.get("/industry", router.industry.view);
 
 //Routes for JSON data
 app.get("/getBusinessLocationData", router.index.getBusinessLocationData)
@@ -165,6 +161,7 @@ app.get("/getCategories", router.data.getCategories);
 app.get("/getSanData", router.data.getSanData);
 app.get("/getUserData", router.data.getUserData);
 app.get("/getIndustry", router.data.getIndustry);
+app.get("/getSanDiegoCompanies", router.data.getSanDiegoCompanies);
 
 //Post routes
 app.post("/postIndustry", router.data.postIndustry);
