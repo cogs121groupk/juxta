@@ -172,52 +172,47 @@ function createGraph(salary, initial){
 // console.log(dataLabel)
     
     var SFData = new Chart(ctx, {
-        type: 'bar',
         data: {
             labels: dataLabel,
             datasets: [{
-                label: '$$$',
                 data: dataSalary,
                 backgroundColor: backgroundColor,
                 borderColor: borderColor,
                 borderWidth: 0.3
             }]
         },
+        type: 'bar',
         options: {
-            title:{
-                display: true,
-                position: "bottom",
-                text: "housing",
-                fontSize: 30,
-                fontColor: 'rgba(255,255,255,1)',
+            legend: {
+                display: false
             },
-            legend:{
-                labels: {
-                    fontSize: 30,
-                    fontColor: 'rgba(255,255,255,1)',
-                }
-            },
-            scales: {
-                scaleLabel: {
-                    display: true,
-                    labelString: "per month",
-                    fontColor: 'rgba(255,255,255,1)',
-                    fontSize: 20,
-                },
-                yAxes: [{
-                    ticks: {
-                        fontColor: 'rgba(255,255,255,1)',
-                        fontSize: 10,
-                        beginAtZero:true, 
-                        max:4000
+            scales:{
+                yAxes:[{
+                    gridLines:{
+                        color: "#FFFFFF"
+                    },
+                    ticks:{
+                        beginAtZero: true,
+                        fontSize: 20,
+                        fontColor: "#FFFFFF"
                     }
                 }],
                 xAxes:[{
+                    gridLines:{
+                        color: "#FFFFFF"
+                    },
                     ticks:{
-                        fontColor: 'rgba(255,255,255,1)',
+                        fontSize: 20,
+                        fontColor: "#FFFFFF"
+                    }
+                }],
+                yAxes:[{
+                    ticks:{
+                        beginAtZero: true,
+                        fontSize: 15,
+                        fontColor: "#FFFFFF"
                     }
                 }]
-
             }
         }
     });
