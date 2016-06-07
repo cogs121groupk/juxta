@@ -20,6 +20,7 @@ require('dotenv').config();
 
 require("dotenv").load();
 var models = require("./models");
+var Promise = require('bluebird');
 var db = mongoose.connection;
 
 var router = { 
@@ -155,6 +156,7 @@ app.get("/", router.index.view);
 app.get("/home", router.home.view);
 app.get("/map", router.map.view);
 app.get("/list", router.list.view);
+app.get("/graph", router.graph.view)
 
 //Routes for JSON data
 app.get("/getBusinessLocationData", router.index.getBusinessLocationData)
