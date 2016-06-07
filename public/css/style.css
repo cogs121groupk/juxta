@@ -227,7 +227,27 @@ ul.more-info {
   width: 60%;
   z-index: 1000;
 }
+.video{
+  float: left;
+  margin-left: 10vw;
+  margin-top: 5vw;
+  width: 80%;
+}
 
+.video h2{
+  color: #3399CC; /*white*/
+  text-align: center;
+  font-size: 7vh;
+  font-weight: bold;
+  margin-top: -2%;
+  font-family: 'Oswald', sans-serif;
+}
+.video iframe{
+  margin-left: 10vw;
+}
+.video p{
+  margin-left: 12vw;
+}
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -240,7 +260,7 @@ ul.more-info {
 
 .not-sidebar {
   margin-left: 20vw;
-  height: 100vh;
+  height: 300vh;
   width: 78vw;
   float: left;
   overflow: hidden;
