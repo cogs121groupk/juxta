@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 	// $.get('/getCategories', function(data){
 	// 	console.log(data);
@@ -8,7 +9,7 @@ $(document).ready(function() {
 	// $.get('/getUserData', function(data){
 	// 	console.log(data);
 	// });
-	$(".choose-industry a").click(chooseIndustry);
+	$("#submit").click(chooseIndustry);
 	$(".sidebar-changeInd a").click(chooseIndustry);
 	getIndustry();
 });
@@ -20,9 +21,16 @@ function getIndustry(){
 }
 
 function chooseIndustry(e){
-	var i = $(this).data("value");
-	var json = { 'industry': i };
-	$.post("/postIndustry", json);
+	// var i = $('.choose-industry a').data("value");
+	// var l = $('.choose-location a').data("value");
+	var i = $('#industry-select').val();
+	var l = $('#location-select').val();
+	var json = { 'industry': i,
+				 'location': l };
+	console.log(json);
+	$.post("/postIndustry", json, function(){
+		window.location.href = "/home";
+	});
 }
 
 function getParameterByName(name, url) {
