@@ -467,8 +467,62 @@ ul {
 
 .container {
   overflow: hidden;
-
 }
+
+
+.help {
+  width: 40px;
+  margin: 0 auto;
+  position:fixed;
+  bottom: 8px;
+  right: 16px;
+}
+
+.help .question {
+  height: 40px;
+  width: 40px;
+  background: #ccc;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.help .popup {
+  width: 230px;
+  height: 0px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+  opacity: 0;
+  transition: 1s;
+}
+
+.help .popup {
+  right:180px;
+  top: 10px;
+}
+.help:hover .popup {
+  opacity: 0.8;
+  height: 200px;
+}
+
+
+
+
+.help .popup p {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+  color: black;
+}
+.help .popup p strong {
+  font-size: 22px;
+}
+
+
+
 .allthreegraph{
   float: left;
   width: 100%;
@@ -555,6 +609,8 @@ h5{
   text-align: center;
   display: inline-block;
 }
+
+
 
 .not-sidebar {
   margin-left: 20vw;
