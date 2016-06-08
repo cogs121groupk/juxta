@@ -160,17 +160,20 @@ function createGraph(salary, initial){
         dataSalary.push(row.price);
 
         if (row.type == "housing"){
-            backgroundColor.push('rgb(255, 99, 132)');
+            backgroundColor.push('rgba(255, 99, 132,0.7)');
             borderColor.push('rgba(255,99,132,1)');
         }
         else {
-            backgroundColor.push('rgb(54, 162, 235)');
+            backgroundColor.push('rgba(54, 162, 235, 0.7)');
             borderColor.push('rgba(54, 162, 235, 1)');
         }
     });
     
 // console.log(dataLabel)
-    
+    var scaleFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 20 : 15;
+    var xAxisFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 20 : 15;
+    var yAxisFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 15 : 10;
+    console.log(scaleFont);
     var SFData = new Chart(ctx, {
         data: {
             labels: dataLabel,
@@ -193,7 +196,7 @@ function createGraph(salary, initial){
                     },
                     ticks:{
                         beginAtZero: true,
-                        fontSize: 20,
+                        fontSize: scaleFont,
                         fontColor: "#FFFFFF"
                     }
                 }],
@@ -202,14 +205,14 @@ function createGraph(salary, initial){
                         color: "#FFFFFF"
                     },
                     ticks:{
-                        fontSize: 20,
+                        fontSize: xAxisFont,
                         fontColor: "#FFFFFF"
                     }
                 }],
                 yAxes:[{
                     ticks:{
                         beginAtZero: true,
-                        fontSize: 15,
+                        fontSize: yAxisFont,
                         fontColor: "#FFFFFF"
                     }
                 }]

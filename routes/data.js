@@ -21,8 +21,8 @@ exports.getIndustry = function(req, res) {
 	// delete req.session.industry; //testing
 	// console.log(req.session.industry);
 	data = {};
-	data.industry = req.session.industry; // will be undefined if none set
-	data.location = req.session.location; // will be undefined if none set
+	data.industry = req.session.industry == undefined ? "Computer and Mathematical Occupations" : req.session.industry; // will be undefined if none set
+	data.location = req.session.location == undefined ? "San Diego" : req.session.location; // will be undefined if none set
 	res.json(data);
 }
 

@@ -170,6 +170,10 @@ app.get("/getUserData", router.data.getUserData);
 app.get("/getIndustry", router.data.getIndustry);
 app.get("/getSanDiegoCompanies", router.data.getSanDiegoCompanies);
 app.get("/compareCompanies", router.data.compareCompanies);
+app.get('/logout', function(req, res){
+  req.logout()
+  res.redirect('/');
+});
 
 //Post routes
 app.post("/postIndustry", router.data.postIndustry);
