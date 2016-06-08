@@ -100,7 +100,7 @@ ul {
   /*margin-top: 50px;*/
   height: 8vh;
   width: 16vw;
-  border: 0px;
+  border: 3px;
   border-style: solid;
   border-color: #FFFFFF;
   border-radius: 9px;
@@ -111,34 +111,34 @@ ul {
   margin-right: 3%;
 }
 
-.learn-btn:hover {
-  background-color: transparent;
-  color: #FFFFFF;
-  border: 3px;
-  border-color: #FFFFFF;
+/*.learn-btn:hover {
+  background-color: #FFFFFF;
+  color: #3399CC;
+  border: 0px;
+  border-color: #131313;
   border-style: solid;
-}
+}*/
 
 .start-btn {
-  background-color: transparent;
+  background-color: #FFFFFF;
   /*margin-top: 50px;*/
   height: 8vh;
   width: 16vw;
-  border: 3px;
+  border: 0px;
   border-style: solid;
   border-color: #FFFFFF;
   border-radius: 9px;
-  color: #FFFFFF;
+  color: #3399CC;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size: 3vh;
   font-weight: bold;
   cursor: pointer;
 }
 
-.start-btn:hover {
+/*.start-btn:hover {
   background-color: #FFFFFF;
-  color: #3399CC;
-}
+  color: #CC6239;
+}*/
 
 #login-middle {
   display: block;
@@ -325,6 +325,23 @@ ul {
   margin-right: 2%;
 }
 
+#industry-select-side {
+  height: 6vh;
+  width: 15vw;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  border: 0px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  cursor: pointer;
+  /*-webkit-appearance: none;*/
+  margin-right: 2%;
+  margin-bottom: 5%;
+  margin-top: -5%;
+}
+
 #location-select {
   height: 6vh;
   width: 20vw;
@@ -338,6 +355,23 @@ ul {
   cursor: pointer;
   /*-webkit-appearance: none;*/
   margin-right: 3%;
+}
+
+#location-select-side {
+  height: 6vh;
+  width: 15vw;
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 2.5vh;
+  /*font-family: 'Quattrocento Sans', sans-serif;*/
+  border: 0px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  cursor: pointer;
+  /*-webkit-appearance: none;*/
+  margin-right: 3%;
+  margin-bottom: 3%;
+  margin-top: -5%;
 }
 
 #submit {
@@ -551,19 +585,32 @@ h5{
 }
 
 .profile img {
-  width: 70%;
+  width: 30%;
   margin-top: 30px;
   margin-bottom: -10px;
   border-radius: 50%;
   box-shadow: 2px 2px 3px 2px #3399cc;
+  display: inline-block;
 }
 
 #profName{
-  font-size: 150%;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 2%;
+  margin-bottom: 10%;
 }
 
 .tabs {
-  padding: 2vh 0 0 2vw;
+  padding: 6vh 0 0 2vw;
+}
+
+.tabs a {
+  color: #CC6239;
+  font-weight: bold;
+}
+
+.tabs a:hover {
+  color: #3399CC;
 }
 
 .tabs p {
@@ -573,7 +620,7 @@ h5{
 
 .options {
   /*margin-top: 40%;*/
-  padding: 18vh 0 0 2vw;
+  padding: 3vh 0 0 2vw;
   text-align: left;
 }
 

@@ -9,20 +9,24 @@
 	<div class = "profile">
 		<img id = "profPic" src="{{users.pictureUrl}}">
 		<p id = "profName">{{users.firstName}} {{users.lastName}}</p>
-		<p>{{users.industry}}</p>
-		<div class="sidebar-changeInd">
-			<button id="sidebar-indDropBtn">Change Your Industry</button>
-			<div id="sidebar-indDropContent">
-			    <a href="/home" data-value="design" >Design</a>
-			    <a href="/home" data-value="computer_science" >Computer Science</a>
-			    <a href="/home" data-value="health" >Health & Medicine</a>
-		  	</div>
-		</div>
+
+		<p style="text-align: left; padding-left: 5%">Current Industry: <b>{{users.industry}}</b></p>	
+		<select id="industry-select-side">
+		    <option selected disabled>Choose an Industry</option>
+		    <option value="Computer and Mathematical Occupations">Computer and Mathematical Occupations</option>
+		</select>
+
+		<p style="text-align: left; padding-left: 5%">Current Location: <b>San Diego</b></p>
+		<select id="location-select-side">
+		    <option selected disabled>Choose a Location</option>
+		    <option value="San Diego">San Diego</option>
+		    <!-- <option value="San Fransico">San Fransico</option> -->
+		</select>
 	</div>
 
 	<div class = "tabs">
-		<p><a href="/home">Compare Companies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></p>
-		<p><a href="/industry">Industry Stats &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></p>
+		<p><a href="/home">Compare Companies</a></p>
+		<p><a href="/industry">Industry Stats</a></p>
 	</div>
 
 	<div class = "options">
