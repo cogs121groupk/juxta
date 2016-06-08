@@ -8,11 +8,24 @@ $( document ).ready(function() {
             console.log(result);
 
                 var count = 0;
-                var color = ["#FF6384",
-                            "#4BC0C0",
-                            "#FFCE56",
-                            "#E7E9ED",
-                            "#36A2EB"];
+                var color = [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(231, 233, 237, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(243, 129, 129, 1)",
+                  "rgba(252, 227, 138, 1)",
+                  "rgba(234, 255, 208, 1)",
+                  "rgba(149, 225, 211, 1)",
+                  "rgba(255, 154, 0, 1)",
+                  "rgba(62, 193, 211, 1)",
+                  "rgba(180, 241, 241, 1)",
+                  "rgba(255, 200, 200, 1)",
+                  "rgba(237, 247, 152, 1)",
+                  "rgba(155, 223, 70, 1)",
+                  "rgba(228, 241, 254, 1)"
+                ]
                             
                 var ctx = document.getElementById("myChart");
                 console.log("run@1");
@@ -23,21 +36,21 @@ $( document ).ready(function() {
                         label: job,
                         fill: false,
                         lineTension: 0.1,
-                        backgroundColor: hue,
-                        borderColor: hue,
+                        backgroundColor: color[count],
+                        borderColor: color[count],
                         borderCapStyle: 'butt',
                         borderDash: [],
                         borderDashOffset: 0.0,
                         borderJoinStyle: 'miter',
-                        pointBorderColor: hue,
+                        pointBorderColor: color[count],
                         pointBackgroundColor: "#fff",
                         pointBorderWidth: 1,
                         pointHoverRadius: 5,
-                        pointHoverBackgroundColor: hue,
+                        pointHoverBackgroundColor: color[count],
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointHoverBorderWidth: 2,
                         pointRadius: 7,
-                        pointBackgroundColor: hue,
+                        pointBackgroundColor: color[count],
                         pointHitRadius: 10,
                         data: result[job]
                     };
@@ -48,7 +61,7 @@ $( document ).ready(function() {
                    // else{
                    //  break;
                    // }
-                   count+=10;
+                   count = (++count) % Object.keys(result).length;
                 }
                 var data = {
                     labels: ["2011", "2012", "2013", "2014", "2015"],
@@ -58,6 +71,10 @@ $( document ).ready(function() {
                   console.log("graph");
                   console.log(data);
 
+                var titleFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 35 : 20;
+                var yFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 20 : 10;
+                var xFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 35 : 20;
+                var legendFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 35 : 15;
                 var myChart = new Chart(ctx, {
                     type: 'line',
                     data: data,
@@ -67,7 +84,7 @@ $( document ).ready(function() {
                         title:{
                           display: true,
                           text: "Salary Trends, 2011-2015 ($ per year):",
-                          fontSize: 35,
+                          fontSize: titleFont,
                           fontColor: "#FFFFFF"
                         },
                         scales:{
@@ -77,7 +94,7 @@ $( document ).ready(function() {
                               color: "#FFFFFF"
                             },
                             ticks:{
-                              fontSize: 20,
+                              fontSize: yFont,
                               fontColor: "#FFFFFF"
                             }
                           }],
@@ -87,7 +104,7 @@ $( document ).ready(function() {
                               color: "#FFFFFF"
                             },
                             ticks:{
-                              fontSize: 35, 
+                              fontSize: xFont, 
                               fontColor: "#FFFFFF"
                             }
                           }]
@@ -96,7 +113,7 @@ $( document ).ready(function() {
                             fullWidth:true,
                             position:"bottom",
                             labels:{
-                                fontSize:35,
+                                fontSize:legendFont,
                                 fontColor: "#FFFFFF"
                             }
                         },

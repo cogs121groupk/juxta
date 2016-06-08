@@ -41,23 +41,26 @@ $(document).ready(function(){
 		    datasets: [{
 		        data: dataSalary,
 		        backgroundColor: [
-			           'rgba(60, 189, 232, 0.4)',
-			           'rgba(252, 74, 20, 0.4)',
-			           'rgba(56, 242, 39, 0.4)',
-			           'rgba(242, 229, 39, 0.4)',
-			           'rgba(158, 84, 227, 0.4)'
+			           "rgba(255, 99, 132, 0.70)",
+						"rgba(75, 192, 192, 0.70)",
+						"rgba(255, 206, 86, 0.70)",
+						"rgba(231, 233, 237, 0.70)",
+						"rgba(54, 162, 235, 0.70)"
 			    	],
 		    	borderColor: [
-						'rgba(60, 189, 232, 1)',
-						'rgba(252, 74, 20, 1)',
-						'rgba(56, 242, 39, 1)',
-						'rgba(242, 229, 39, 1)',
-						'rgba(158, 84, 227, 1)'
+						"rgba(255, 99, 132, 1)",
+						"rgba(75, 192, 192, 1)",
+						"rgba(255, 206, 86, 1)",
+						"rgba(231, 233, 237, 1)",
+						"rgba(54, 162, 235, 1)"
 		    	],
 		    }],
 		    labels: dataLabel
 		};
 
+		var legendFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 25 : 15;
+    	var titleFont = $(document).width() >=1980 &&  $(document).height() >=1080 ? 35 : 25;
+    	var scaleFont =  $(document).width() >=1980 &&  $(document).height() >=1080 ? 30 : 20;
 		var chart = new Chart(ctx, {
 		    data: data,
 		    type: 'polarArea',
@@ -66,14 +69,14 @@ $(document).ready(function(){
 		    		position: 'bottom',
 		    		fullWidth: true,
 		    		labels:{
-		    			fontSize: 25,
+		    			fontSize: legendFont,
 		    			fontColor: "#ffffff"
 		    		}
 		    	},
 		    	title:{
 		    		display: true,
 		    		text: "Computers and Mathematics",
-		    		fontSize: 35,
+		    		fontSize: titleFont,
 		    		fontColor: "#FFFFFF"
 		    	},
 		        scale:{
@@ -82,7 +85,7 @@ $(document).ready(function(){
 			        },
 			        ticks:{
 			        	beginAtZero: true,
-			        	fontSize: 30
+			        	fontSize: scaleFont
 			        }
 			    }
     		}
