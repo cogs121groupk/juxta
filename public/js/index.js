@@ -10,7 +10,7 @@ $(document).ready(function() {
 	// 	console.log(data);
 	// });
 	$("#submit").click(chooseIndustry);
-	$(".sidebar-changeInd a").click(chooseIndustry);
+	$("#submit-side").click(chooseIndustrySide);
 	getIndustry();
 });
 
@@ -30,6 +30,20 @@ function chooseIndustry(e){
 	console.log(json);
 	$.post("/postIndustry", json, function(){
 		window.location.href = "/home";
+	});
+}
+
+function chooseIndustrySide(e){
+	// var i = $('.choose-industry a').data("value");
+	// var l = $('.choose-location a').data("value");
+	var i = $('#industry-select-side').val();
+	var l = $('#location-select-side').val();
+	var json = { 'industry': i,
+				 'location': l };
+	console.log(json);
+	$.post("/postIndustry", json, function(){
+		//window.location.href = "/home";
+		alert("Changed Industry to "+json.industry);
 	});
 }
 

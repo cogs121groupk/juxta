@@ -160,7 +160,6 @@ app.get("/industry", router.industry.view);
 app.get("/getBusinessLocationData", router.index.getBusinessLocationData);
 
 app.get("/getUserPicture", function(req, res){
-  console.log(req.session.user);
   return res.json(req.session.user.pictureUrl);
 });
 
@@ -171,6 +170,10 @@ app.get("/getIndustry", router.data.getIndustry);
 app.get("/getSanDiegoCompanies", router.data.getSanDiegoCompanies);
 app.get("/compareCompanies", router.data.compareCompanies);
 app.get('/logout', function(req, res){
+  req.session.user = undefined;
+  req.session.industry = undefined;
+  req.session.location = undefined;
+  req.session.passport = undefined;
   req.logout()
   res.redirect('/');
 });
