@@ -1,10 +1,12 @@
 
 exports.view = function(req, res) {
-    if(req.session.passport === undefined){
-		var data = {firstName: "User", lastName: "", pictureUrl: "../images/profilepic.png"};
+	var data;
+    if(req.session.passport === undefined || Object.keys(req.session.passport).length === 0){
+		data = {firstName: "User", lastName: "", pictureUrl: "../images/profilepic.png"};
+		res.render("home",{users: data});
 	}
 	else{
-		var data = req.session.passport.user;
+		data = req.session.passport.user;
+		res.render("home",{users: data});
 	}
-	res.render("home",{users: data});
 };
